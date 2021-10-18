@@ -1,10 +1,3 @@
----
-group:
-  path: /form
-  title: Form
-  order: 2
----
-
 ## Calendar
 
 使用:

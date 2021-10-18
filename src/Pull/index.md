@@ -1,10 +1,3 @@
----
-group:
-  path: /data
-  title: Data
-  order: 2
----
-
 ## Pull
 
 使用:

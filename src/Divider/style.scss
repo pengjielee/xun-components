@@ -1,0 +1,29 @@
+.xun-divider {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  color: #999;
+  font-size: 14px;
+  border-width: 0;
+  border-color: #eee;
+  border-style: solid;
+  &__left::before {
+    max-width: 10%;
+  }
+  &__right::after {
+    max-width: 10%;
+  }
+  &::after,
+  &::before {
+    flex: auto;
+    display: block;
+    content: '';
+    border-style: inherit;
+    border-color: inherit;
+    border-width: 1px 0 0;
+  }
+  &__content {
+    flex: none;
+    padding: 0 16px;
+  }
+}

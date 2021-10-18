@@ -1,10 +1,3 @@
----
-group:
-  path: /form
-  title: Form
-  order: 2
----
-
 ## Checkbox
 
 使用:

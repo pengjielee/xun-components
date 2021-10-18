@@ -1,10 +1,3 @@
----
-group:
-  path: /navigation
-  title: Navigation
-  order: 2
----
-
 ## Collapse
 
 使用:

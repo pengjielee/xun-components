@@ -12,15 +12,24 @@ const createScript = function (desFilePath, componentName) {
     .split(/(?=[A-Z])/)
     .map((item) => item.toLowerCase())
     .join('-');
-  const content = `import React from 'react';
+  const content = `import React, { FC } from 'react';
+import classnames from 'classnames';
+import './style.css';
+
+const classPrefix = 'xun-${className}';
 
 interface IProps {
   text?: string;
+  children?: React.ReactNode;
+  className?: string;
 }
 
-const ${componentName}: React.FC<IProps> = (props) => {
-  const { text, children } = props;
-  return <div className="xun-${className}">{children}</div>;
+const ${componentName}: FC<IProps> = (props) => {
+  const { className, text, children } = props;
+
+  const finalClassName = classnames(classPrefix, className);
+
+  return <div className={finalClassName}>{children}</div>;
 };
 
 export default ${componentName};`;
@@ -53,6 +62,7 @@ if (name) {
     fs.mkdirpSync(desDir);
     createScript(path.join(desDir, 'index.tsx'), componentName);
     createMarkdown(path.join(desDir, 'index.md'), componentName);
+    fs.writeFileSync(path.join(desDir, 'style.css'), '');
   } else {
     console.log(chalk.red(componentName + ' existed!'));
     inquirer
@@ -67,6 +77,7 @@ if (name) {
         if (answers.yes) {
           createScript(path.join(desDir, 'index.tsx'), componentName);
           createMarkdown(path.join(desDir, 'index.md'), componentName);
+          fs.writeFileSync(path.join(desDir, 'style.css'), '');
         }
       });
   }

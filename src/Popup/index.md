@@ -1,10 +1,3 @@
----
-group:
-  path: /feedback
-  title: Feedback
-  order: 2
----
-
 ## Popup
 
 使用:

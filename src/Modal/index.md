@@ -1,10 +1,3 @@
----
-group:
-  path: /feedback
-  title: Feedback
-  order: 3
----
-
 ## Modal
 
 使用:

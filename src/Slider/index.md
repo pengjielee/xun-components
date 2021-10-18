@@ -1,10 +1,3 @@
----
-group:
-  path: /form
-  title: Form
-  order: 2
----
-
 ## Slider
 
 使用:

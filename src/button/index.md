@@ -1,10 +1,3 @@
----
-group:
-  path: /general
-  title: General
-  order: 1
----
-
 ## Button
 
 Demo:

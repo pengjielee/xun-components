@@ -1,10 +1,3 @@
----
-group:
-  path: /form
-  title: Form
-  order: 2
----
-
 ## SearchBar
 
 使用:

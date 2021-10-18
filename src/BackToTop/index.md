@@ -1,10 +1,3 @@
----
-group:
-  path: /other
-  title: Other
-  order: 2
----
-
 ## BackToTop
 
 使用:

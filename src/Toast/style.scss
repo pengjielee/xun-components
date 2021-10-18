@@ -1,0 +1,39 @@
+@import '../style/animate.css';
+
+.xun-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: fit-content;
+  min-width: 100px;
+  max-width: 70%;
+  max-height: 70%;
+  overflow: auto;
+  color: white;
+  text-align: center;
+  word-break: break-all;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  pointer-events: all;
+  animation: fadeIn 2s;
+  &__content {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  &__success {
+    background: #07bc0c;
+  }
+  &__fail {
+    background: #e74c3c;
+  }
+  &__info {
+    background: #3498db;
+  }
+  &__warn {
+    background: #f1c40f;
+  }
+  &__default {
+    background: #000000;
+  }
+}

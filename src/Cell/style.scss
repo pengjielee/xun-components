@@ -1,0 +1,35 @@
+@import '../style/base.css';
+@import '../style/hairline.css';
+
+.xun-cell {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 15px 10px;
+  cursor: pointer;
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  &__description {
+    color: #666;
+    font-size: 14px;
+  }
+  &__icon {
+    margin-right: 5px;
+  }
+  &__arrow {
+    margin-left: 5px;
+    margin-right: 2px;
+    &:after {
+      display: inline-block;
+      content: '';
+      border-right: 2px solid #bcbcbc;
+      border-top: 2px solid #bcbcbc;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+    }
+  }
+}

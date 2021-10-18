@@ -1,10 +1,3 @@
----
-group:
-  path: /picker
-  title: Picker
-  order: 2
----
-
 ## AreaPicker
 
 使用:

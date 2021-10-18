@@ -1,10 +1,3 @@
----
-group:
-  path: /feedback
-  title: Feedback
-  order: 1
----
-
 ## Message
 
 使用:
