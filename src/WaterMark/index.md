@@ -6,7 +6,7 @@
 import React from 'react';
 import { WaterMark } from 'xun-components';
 
-const Demo = () => <WaterMark>WaterMark</WaterMark>;
+const Demo = () => <WaterMark content="hello world"></WaterMark>;
 
 export default Demo;
 ```

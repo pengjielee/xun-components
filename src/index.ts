@@ -24,3 +24,4 @@ export { default as Stepper } from './Stepper';
 export { default as Switch } from './Switch';
 export { default as TabBar } from './TabBar';
 export { default as Toast } from './Toast';
+export { default as WaterMark } from './WaterMark';
