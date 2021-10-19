@@ -1,0 +1,12 @@
+.xun-progress-bar {
+  display: flex;
+  align-items: center;
+  &__trail {
+    flex: 0 1 90%;
+  }
+  &__content {
+    font-size: 12px;
+    color: #333;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,40 @@
+.xun-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__circle {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+  }
+  &__number {
+    color: #333;
+    font-size: 20px;
+  }
+}
+
+/*
+.progress {
+  animation: rotate 1s linear both;
+}
+@keyframes rotate {
+  from {
+    stroke-dashoffset: 169px;
+  }
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+*/
