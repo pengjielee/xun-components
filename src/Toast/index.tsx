@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import InnerToast from './Toast';
 
 const createToast = (content, options) => {
-  const duration = (options && options.duration) || 300000;
+  const duration = (options && options.duration) || 3000;
 
   const container = document.createElement('div');
   document.body.appendChild(container);

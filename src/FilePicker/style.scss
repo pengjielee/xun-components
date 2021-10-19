@@ -1,0 +1,17 @@
+.xun-file-picker__wrapper {
+  display: flex;
+  .xun-file-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ddd;
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+    color: #666;
+    &__disabled {
+      cursor: not-allowed;
+    }
+  }
+}

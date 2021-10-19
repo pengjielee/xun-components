@@ -6,7 +6,11 @@
 import React from 'react';
 import { Loading } from 'xun-components';
 
-const Demo = () => <Loading>Loading</Loading>;
+const Demo = () => (
+  <>
+    <button onClick={() => Loading.show('hello')}>loading</button>
+  </>
+);
 
 export default Demo;
 ```

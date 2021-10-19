@@ -14,7 +14,7 @@ const createScript = function (desFilePath, componentName) {
     .join('-');
   const content = `import React, { FC } from 'react';
 import classnames from 'classnames';
-import './style.css';
+import './style.scss';
 
 const classPrefix = 'xun-${className}';
 
@@ -62,7 +62,7 @@ if (name) {
     fs.mkdirpSync(desDir);
     createScript(path.join(desDir, 'index.tsx'), componentName);
     createMarkdown(path.join(desDir, 'index.md'), componentName);
-    fs.writeFileSync(path.join(desDir, 'style.css'), '');
+    fs.writeFileSync(path.join(desDir, 'style.scss'), '');
   } else {
     console.log(chalk.red(componentName + ' existed!'));
     inquirer
@@ -77,7 +77,7 @@ if (name) {
         if (answers.yes) {
           createScript(path.join(desDir, 'index.tsx'), componentName);
           createMarkdown(path.join(desDir, 'index.md'), componentName);
-          fs.writeFileSync(path.join(desDir, 'style.css'), '');
+          fs.writeFileSync(path.join(desDir, 'style.scss'), '');
         }
       });
   }

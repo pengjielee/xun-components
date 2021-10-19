@@ -20,8 +20,6 @@ const Demo = () => (
     <br />
     <button onClick={() => Toast.fail('失败提示')}>失败提示</button>
     <br />
-    <button onClick={() => Toast.error('错误提示')}>错误提示</button>
-    <br />
   </>
 );
 

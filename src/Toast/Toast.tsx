@@ -29,11 +29,10 @@ const Toast: FC<IProps> = (props) => {
 
   return (
     <>
-      <Mask opacity={1}>
-        <div className={finalClassName}>
-          <div className={`${classPrefix}__content`}>{content}</div>
-        </div>
-      </Mask>
+      {hasMask ? <Mask theme="light" opacity={1}></Mask> : null}
+      <div className={finalClassName}>
+        <div className={`${classPrefix}__content`}>{content}</div>
+      </div>
     </>
   );
 };

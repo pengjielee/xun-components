@@ -10,6 +10,7 @@ interface IProps {
   className?: string;
   zIndex?: number;
   opacity?: number;
+  theme?: 'dark' | 'light';
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler;
 }
@@ -18,6 +19,7 @@ const Mask: React.FC<IProps> = (props) => {
   let {
     visible = true,
     className = '',
+    theme = 'dark',
     children,
     opacity = 10,
     zIndex = 300,
@@ -39,7 +41,11 @@ const Mask: React.FC<IProps> = (props) => {
   const Element = visible ? (
     <div
       className={finalClassName}
-      style={{ zIndex: zIndex, opacity: opacity }}
+      style={{
+        zIndex: zIndex,
+        opacity: opacity,
+        backgroundColor: theme === 'dark' ? '#000000' : '#FFFFFF',
+      }}
       onClick={handleClick}
     >
       {children}

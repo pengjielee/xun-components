@@ -1,0 +1,32 @@
+@import '../style/animate.css';
+@import '../style/hairline.css';
+
+.xun-collapse {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  &__item {
+    &-active {
+      .icon-arrow {
+        transform: rotate(90deg);
+        transition: all ease 0.2s;
+      }
+    }
+  }
+  &__title {
+    font-size: 18px;
+  }
+  &__content {
+    overflow: hidden;
+    font-size: 16px;
+    box-sizing: border-box;
+    &-inner {
+      padding: 15px 10px;
+    }
+  }
+}
