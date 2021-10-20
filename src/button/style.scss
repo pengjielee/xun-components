@@ -1,0 +1,76 @@
+.xun-button {
+  min-height: 1em;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin: 0 10px 0 0;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  background: #e0e1e2;
+  color: #333;
+  &:hover {
+    background: #cacbcd;
+  }
+  &__large {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  &__small {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  &__block {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background: #eee;
+    color: #666;
+  }
+
+  &__primary {
+    background: #2185d0;
+    color: #fff;
+    &:hover {
+      background: #1678c2;
+    }
+  }
+
+  &__success {
+    background: #16ab39;
+    color: #fff;
+    &:hover {
+      background: #16ab39;
+    }
+  }
+
+  &__warn {
+    background: #fbbd08;
+    color: #fff;
+    &:hover {
+      background: #eaae00;
+    }
+  }
+
+  &__danger {
+    background: #db2828;
+    color: #fff;
+    &:hover {
+      background: #d01919;
+    }
+  }
+}

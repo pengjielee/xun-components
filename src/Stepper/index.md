@@ -3,10 +3,17 @@
 使用:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Stepper } from 'xun-components';
 
-const Demo = () => <Stepper>Stepper</Stepper>;
+const Demo = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Stepper value={2} min={0} max={5}></Stepper>
+    </>
+  );
+};
 
 export default Demo;
 ```

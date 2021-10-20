@@ -13,6 +13,7 @@ interface IProps {
   theme?: 'dark' | 'light';
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler;
+  position?: string;
 }
 
 const Mask: React.FC<IProps> = (props) => {
@@ -23,6 +24,7 @@ const Mask: React.FC<IProps> = (props) => {
     children,
     opacity = 10,
     zIndex = 300,
+    position = '',
     onClick,
   } = props;
 
@@ -52,7 +54,9 @@ const Mask: React.FC<IProps> = (props) => {
     </div>
   ) : null;
 
-  return ReactDOM.createPortal(Element, document.body);
+  return position === 'body'
+    ? ReactDOM.createPortal(Element, document.body)
+    : Element;
 };
 
 export default Mask;

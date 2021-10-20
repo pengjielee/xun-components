@@ -6,7 +6,11 @@
 import React from 'react';
 import { ActionSheet } from 'xun-components';
 
-const Demo = () => <ActionSheet>ActionSheet</ActionSheet>;
+const Demo = () => (
+  <>
+    <ActionSheet>ActionSheet</ActionSheet>
+  </>
+);
 
 export default Demo;
 ```

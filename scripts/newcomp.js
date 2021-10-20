@@ -7,11 +7,14 @@ const fs = require('fs-extra');
 const options = process.argv.slice(2);
 const name = options[0];
 
-const createScript = function (desFilePath, componentName) {
-  const className = componentName
+const getClassName = (componentName) =>
+  componentName
     .split(/(?=[A-Z])/)
     .map((item) => item.toLowerCase())
     .join('-');
+
+const createScript = function (desFilePath, componentName) {
+  const className = getClassName(componentName);
   const content = `import React, { FC } from 'react';
 import classnames from 'classnames';
 import './style.scss';
@@ -19,6 +22,7 @@ import './style.scss';
 const classPrefix = 'xun-${className}';
 
 interface IProps {
+  visible?: boolean;
   text?: string;
   children?: React.ReactNode;
   className?: string;
@@ -29,7 +33,7 @@ const ${componentName}: FC<IProps> = (props) => {
 
   const finalClassName = classnames(classPrefix, className);
 
-  return <div className={finalClassName}>{children}</div>;
+  return <div className={finalClassName}><span className={\`$\{classPrefix\}__title\`}>{children}</span></div>;
 };
 
 export default ${componentName};`;
@@ -43,10 +47,13 @@ const createMarkdown = function (desFilePath, componentName) {
 使用:
 
 \`\`\`tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { ${componentName} } from 'xun-components';
 
-const Demo = () => <${componentName}>${componentName}</${componentName}>;
+const Demo = () => {
+  const [visible,setVisible] = useState(false);
+  return <><${componentName}>${componentName}</${componentName}></>;
+};
 
 export default Demo; 
 \`\`\``;
@@ -58,11 +65,13 @@ if (name) {
   const componentName = name.slice(0, 1).toUpperCase() + name.slice(1);
   const desDir = path.join(__dirname, '../src/' + componentName);
 
+  const styleContent = `.xun-${getClassName(componentName)} {}`;
+
   if (!fs.existsSync(desDir)) {
     fs.mkdirpSync(desDir);
     createScript(path.join(desDir, 'index.tsx'), componentName);
     createMarkdown(path.join(desDir, 'index.md'), componentName);
-    fs.writeFileSync(path.join(desDir, 'style.scss'), '');
+    fs.writeFileSync(path.join(desDir, 'style.scss'), styleContent);
   } else {
     console.log(chalk.red(componentName + ' existed!'));
     inquirer
@@ -77,7 +86,7 @@ if (name) {
         if (answers.yes) {
           createScript(path.join(desDir, 'index.tsx'), componentName);
           createMarkdown(path.join(desDir, 'index.md'), componentName);
-          fs.writeFileSync(path.join(desDir, 'style.scss'), '');
+          fs.writeFileSync(path.join(desDir, 'style.scss'), styleContent);
         }
       });
   }
