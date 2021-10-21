@@ -1,0 +1,37 @@
+@import '../style/index.scss';
+
+.xun-notice-bar {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  &__default {
+    background: #cdd3d8;
+    color: #191d21;
+  }
+  &__primary {
+    background: #6777ef;
+  }
+  &__success {
+    background: #63ed7a;
+  }
+  &__warning {
+    background: #ffa426;
+  }
+  &__danger {
+    background: #fc544b;
+  }
+  &__info {
+    background: #3abaf4;
+  }
+  &__light {
+    background: #e3eaef;
+    color: #191d21;
+  }
+  &__dark {
+    background: #191d21;
+  }
+}

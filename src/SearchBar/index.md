@@ -3,10 +3,17 @@
 使用:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchBar } from 'xun-components';
 
-const Demo = () => <SearchBar>SearchBar</SearchBar>;
+const Demo = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <SearchBar>SearchBar</SearchBar>
+    </>
+  );
+};
 
 export default Demo;
 ```

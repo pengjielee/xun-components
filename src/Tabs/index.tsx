@@ -1,12 +1,5 @@
-import React from 'react';
+import { attachPropertiesToComponent } from '../utils';
+import Tabs from './Tabs';
+import TabPanel from './TabPanel';
 
-interface IProps {
-  text?: string;
-}
-
-const Tabs: React.FC<IProps> = (props) => {
-  const { text, children } = props;
-  return <div className="xun-tabs">{children}</div>;
-};
-
-export default Tabs;
+export default attachPropertiesToComponent(Tabs, { TabPanel: TabPanel });

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import './style.css';
+import './style.scss';
 
 const classPrefix = `xun-mask`;
 
@@ -22,8 +22,8 @@ const Mask: React.FC<IProps> = (props) => {
     className = '',
     theme = 'dark',
     children,
-    opacity = 10,
-    zIndex = 300,
+    opacity = 8,
+    zIndex = 1000,
     position = '',
     onClick,
   } = props;

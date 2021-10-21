@@ -24,7 +24,7 @@ const Popup: FC<IProps> = (props) => {
         className={finalClassName}
         style={{ display: visible ? 'unset' : 'none' }}
       >
-        <Mask opacity={2} onClick={props.onMaskClick} />
+        <Mask onClick={props.onMaskClick} />
         <div
           className={classnames(
             `${classPrefix}__body`,

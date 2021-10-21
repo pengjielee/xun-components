@@ -1,0 +1,20 @@
+@import '../style/index.scss';
+
+.xun-marquee {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  &__inner {
+    flex: 0 0 auto;
+    min-width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: scroll var(--marquee-duration) linear var(--marquee-delay)
+      var(--marquee-iteration-count) var(--marquee-direction);
+  }
+}

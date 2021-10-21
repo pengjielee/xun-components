@@ -1,12 +1,5 @@
-import React from 'react';
+import { attachPropertiesToComponent } from '../utils';
+import List from './List';
+import ListItem from './ListItem';
 
-interface IProps {
-  text?: string;
-}
-
-const List: React.FC<IProps> = (props) => {
-  const { text, children } = props;
-  return <div className="xun-list">{children}</div>;
-};
-
-export default List;
+export default attachPropertiesToComponent(List, { Item: ListItem });

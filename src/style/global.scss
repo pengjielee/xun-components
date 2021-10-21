@@ -18,3 +18,15 @@ a {
   text-decoration: none;
   outline: none;
 }
+
+.arrow-right {
+  &:after {
+    display: inline-block;
+    content: '';
+    border-right: 2px solid #bcbcbc;
+    border-top: 2px solid #bcbcbc;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+}
