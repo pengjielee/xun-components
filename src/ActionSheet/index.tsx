@@ -8,7 +8,8 @@ const classPrefix = 'xun-action-sheet';
 interface Action {
   key: string | number;
   text: string;
-  type?: 'primary' | 'success' | 'fail' | 'warn' | 'danger';
+  type?: 'success' | 'failure' | 'warning' | 'danger';
+  disabled?: boolean;
   onClick?: () => void;
   className?: string;
 }
@@ -36,22 +37,33 @@ const ActionSheet: FC<IProps> = (props) => {
 
   const finalClassName = classnames(classPrefix, className);
 
-  const hancleCancel = () => {
+  const handleCancel = () => {
     typeof onCancel === 'function' && onCancel();
+  };
+
+  const handleClick = (action) => {
+    const { disabled = false, onClick } = action;
+    if (disabled) {
+      return;
+    }
+    typeof onClick === 'function' && onClick();
   };
 
   const renderActions = () => {
     return actions.map((action, index) => {
-      const { key, text, type = 'info', onClick } = action;
+      const { key, text, type = 'info', disabled = false, onClick } = action;
       return (
         <div
           key={key || index}
           className={classnames(
             `${classPrefix}__actions-item`,
-            `${classPrefix}__actions-item-${type}`,
+            `${classPrefix}__actions-item_${type}`,
             `hairline--bottom`,
+            {
+              [`${classPrefix}__actions-item_disabled`]: disabled,
+            },
           )}
-          onClick={onClick}
+          onClick={() => handleClick(action)}
         >
           {text}
         </div>
@@ -73,7 +85,7 @@ const ActionSheet: FC<IProps> = (props) => {
         <div className={`${classPrefix}__actions`}>{renderActions()}</div>
 
         {cancelText && (
-          <div className={`${classPrefix}__cancel`} onClick={hancleCancel}>
+          <div className={`${classPrefix}__cancel`} onClick={handleCancel}>
             {cancelText}
           </div>
         )}

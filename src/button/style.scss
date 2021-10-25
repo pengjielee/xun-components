@@ -1,11 +1,9 @@
 .xun-button {
   min-height: 1em;
-  color: #fff;
   font-size: 14px;
   text-align: center;
   font-weight: bold;
   padding: 10px 15px;
-  margin: 0 10px 0 0;
   border: none;
   outline: 0;
   cursor: pointer;
@@ -18,10 +16,10 @@
   font-style: normal;
   text-align: center;
   text-decoration: none;
-  background: #e0e1e2;
-  color: #333;
+  background-color: var(--color);
+  color: #ffffff;
   &:hover {
-    background: #cacbcd;
+    background: var(--color-hover);
   }
   &__large {
     padding: 12px 30px;
@@ -42,7 +40,7 @@
     color: #666;
   }
 
-  &__primary {
+  /*&__primary {
     background: #2185d0;
     color: #fff;
     &:hover {
@@ -72,5 +70,5 @@
     &:hover {
       background: #d01919;
     }
-  }
+  }*/
 }

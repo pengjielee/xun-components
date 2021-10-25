@@ -4,15 +4,29 @@
 
 ```tsx
 import React, { useState } from 'react';
-import { Mask } from 'xun-components';
+import { Mask, Cell, Button } from 'xun-components';
+import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);
   return (
-    <>
-      <button onClick={() => setVisible(true)}>显示遮罩层</button>
-      <Mask visible={visible} onClick={() => setVisible(false)}></Mask>
-    </>
+    <div className="demo-page demo-page-mask">
+      <header>
+        <h3 className="demo-page-title">遮罩层</h3>
+      </header>
+      <main>
+        <Cell
+          title="显示遮罩层"
+          description={
+            <Button size="small" onClick={() => setVisible(true)}>
+              开启
+            </Button>
+          }
+        ></Cell>
+
+        <Mask visible={visible} onClick={() => setVisible(false)}></Mask>
+      </main>
+    </div>
   );
 };
 

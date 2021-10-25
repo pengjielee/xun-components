@@ -39,10 +39,12 @@ const Cell: FC<IProps> = (props) => {
         {titleRender}
         {contentRender}
       </div>
-      <div className={`${classPrefix}__right`}>
-        {descRender}
-        {arrowRender}
-      </div>
+      {hasArrow || description ? (
+        <div className={`${classPrefix}__right`}>
+          {descRender}
+          {arrowRender}
+        </div>
+      ) : null}
     </div>
   );
 };

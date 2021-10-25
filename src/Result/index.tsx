@@ -4,12 +4,12 @@ import './style.scss';
 import SuccessIcon from './icon-success.svg';
 import ErrorIcon from './icon-error.svg';
 import InfoIcon from './icon-info.svg';
-import WarnIcon from './icon-warn.svg';
+import WarningIcon from './icon-warning.svg';
 
 const classPrefix = 'xun-result';
 
 interface IProps {
-  status?: 'success' | 'error' | 'info' | 'warn';
+  status?: 'success' | 'error' | 'info' | 'warning';
   icon?: React.ReactNode;
   title?: string;
   description?: string;
@@ -20,7 +20,7 @@ const icons = {
   success: SuccessIcon,
   error: ErrorIcon,
   info: InfoIcon,
-  warn: WarnIcon,
+  warning: WarningIcon,
 };
 
 const Result: FC<IProps> = (props) => {

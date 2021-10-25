@@ -1,4 +1,4 @@
-@import '../style/index.scss';
+@import '../assets/styles/index.scss';
 
 .xun-stepper {
   display: flex;
@@ -16,18 +16,27 @@
   /* 火狐浏览器 */
   &__input[type='number'] {
     -moz-appearance: textfield;
-    border: none;
     outline: none;
     padding: 0;
-    margin: 0;
   }
   &__input-wrapper {
     height: 30px;
   }
   &__add,
   &__minus {
-    border: none;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid #ddd;
     outline: none;
     background: #fff;
+    cursor: pointer;
+  }
+  &__input {
+    margin: 0 5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid #ddd;
   }
 }

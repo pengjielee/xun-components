@@ -26,13 +26,13 @@ const TextArea: React.FC<IProps> = (props) => {
   const {
     id = Date.now() + '',
     className,
-    rows = 4,
+    rows = 2,
     maxLength,
     disabled = false,
     readOnly = false,
     focused = false,
     value,
-    ...rest
+    placeholder = '',
   } = props;
 
   useEffect(() => {
@@ -44,14 +44,14 @@ const TextArea: React.FC<IProps> = (props) => {
   const handleChange = (e) => {
     const { onChange } = props;
     const { value } = e.target;
-
+    console.log(value);
     if (typeof onChange === 'function') {
       onChange(value);
     }
   };
 
   return (
-    <div className={classnames(`${classPrefix}-wrapper`, className)}>
+    <div className={classnames(`${classPrefix}__wrapper`, className)}>
       {readOnly ? (
         <div className={`${classPrefix}__content`}>{value}</div>
       ) : (
@@ -59,7 +59,8 @@ const TextArea: React.FC<IProps> = (props) => {
           ref={textAreaRef}
           className={classPrefix}
           rows={rows}
-          value={'value' in props ? value : undefined}
+          value={value}
+          placeholder={placeholder}
           maxLength={maxLength}
           disabled={disabled}
           onChange={(e) => handleChange(e)}
@@ -70,7 +71,6 @@ const TextArea: React.FC<IProps> = (props) => {
             props.onBlur?.(e);
           }}
           id={props.id}
-          {...rest}
         />
       )}
     </div>

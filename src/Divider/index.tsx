@@ -22,9 +22,7 @@ const Divider: FC<IProps> = (props) => {
 
   return (
     <div className={finalClassName}>
-      {children ? (
-        <div className={`${classPrefix}__content`}>{children}</div>
-      ) : null}
+      {children && <div className={`${classPrefix}__content`}>{children}</div>}
     </div>
   );
 };

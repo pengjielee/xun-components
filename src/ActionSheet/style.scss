@@ -1,4 +1,4 @@
-@import '../style/index.scss';
+@import '../assets/styles/index.scss';
 
 .xun-action-sheet {
   font-size: 16px;
@@ -19,6 +19,22 @@
       padding: 15px;
       text-align: center;
       cursor: pointer;
+      &_success {
+        color: var(--color-success);
+      }
+      &_failure {
+        color: var(--color-failure);
+      }
+      &_warning {
+        color: var(--color-warning);
+      }
+      &_danger {
+        color: var(--color-danger);
+      }
+      &_disabled {
+        color: #ddd;
+        cursor: not-allowed;
+      }
     }
   }
   &__cancel {

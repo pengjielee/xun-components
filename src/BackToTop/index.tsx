@@ -6,7 +6,7 @@ const classPrefix = 'xun-back-to-top';
 
 interface IProps {
   visibilityHeight?: number;
-  children?: React.ReactNode;
+  children?: string | React.ReactNode;
   className?: string;
 }
 

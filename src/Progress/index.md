@@ -3,17 +3,66 @@
 使用:
 
 ```tsx
-import React from 'react';
-import { Progress } from 'xun-components';
+import React, { useState } from 'react';
+import { Progress, Button } from 'xun-components';
+import '../assets/styles/demo.scss';
 
-const Demo = () => (
-  <>
-    <Progress percent={10}></Progress>
-    <Progress percent={20} strokeWidth={2}></Progress>
-    <Progress percent={30} strokeWidth={2} strokeColor="blue"></Progress>
-    <Progress percent={40}>hello</Progress>
-  </>
-);
+const Demo = () => {
+  const [percent, setPercent] = useState(10);
+
+  const handleAdd = () => {
+    if (percent >= 100) {
+      return;
+    }
+    setPercent(percent + 10);
+  };
+
+  const handleMinus = () => {
+    if (percent <= 0) {
+      return;
+    }
+    setPercent(percent - 10);
+  };
+
+  return (
+    <div className="demo-page">
+      <header>
+        <h3 className="demo-page-title">圆形进度条</h3>
+      </header>
+      <main>
+        <div className="demo-block">
+          <div className="demo-title">基本</div>
+          <Progress percent={percent}></Progress>
+        </div>
+        <div className="demo-block">
+          <div className="demo-title">设置线条宽度</div>
+          <Progress percent={percent} strokeWidth="2"></Progress>
+        </div>
+        <div className="demo-block">
+          <div className="demo-title">设置线条颜色</div>
+          <Progress
+            percent={percent}
+            strokeWidth="2"
+            strokeColor="red"
+          ></Progress>
+        </div>
+
+        <Button type="primary" onClick={handleAdd}>
+          增加
+        </Button>
+        <Button onClick={handleMinus}>减少</Button>
+      </main>
+    </div>
+  );
+};
 
 export default Demo;
 ```
+
+## 参数
+
+| 参数        | 说明                | 类型     | 默认值    |
+| ----------- | ------------------- | -------- | --------- |
+| percent     | 百分比              | `number` | `0`       |
+| strokeColor | 进度条颜色          | `string` | `#00bc70` |
+| strokeWidth | 线条宽度，单位 `px` | `number` | `5`       |

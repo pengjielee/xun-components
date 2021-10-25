@@ -1,24 +1,44 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import { getCssValue, getDarkColor } from '../assets/utils';
 import './style.scss';
 
 const classPrefix = 'xun-button';
 
 interface IProps {
-  type?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
+  type?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'info';
+  color?: string;
   size?: 'normal' | 'large' | 'small';
   round?: number | boolean;
   block?: boolean;
   disabled?: boolean;
-  style?: object;
+  style?: React.CSSProperties;
   className?: string;
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
+const colors = {
+  default: 'var(--color-default)',
+  primary: 'var(--color-primary)',
+  secondary: 'var(--color-secondary)',
+  success: 'var(--color-success)',
+  warning: 'var(--color-warning)',
+  danger: 'var(--color-danger)',
+  info: 'var(--color-info)',
+};
+
 const Button: React.FC<IProps> = (props) => {
   const {
     type = 'default',
+    color = '',
     size = 'normal',
     block = false,
     disabled = false,
@@ -45,10 +65,20 @@ const Button: React.FC<IProps> = (props) => {
     borderRadius = `${round}px`;
   }
 
+  const defaultColor =
+    getCssValue(
+      colors[type] && colors[type].replace('var(', '').replace(')', ''),
+    ) || color;
+
+  const hoverColor = getDarkColor(defaultColor);
+  console.log(hoverColor);
+
   const finalStyle = Object.assign(
     {},
     {
       borderRadius: borderRadius,
+      '--color': colors[type] || color,
+      '--color-hover': hoverColor,
     },
     { ...style },
   );

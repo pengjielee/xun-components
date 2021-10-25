@@ -65,7 +65,7 @@ if (name) {
   const componentName = name.slice(0, 1).toUpperCase() + name.slice(1);
   const desDir = path.join(__dirname, '../src/' + componentName);
 
-  const styleContent = `@import '../style/index.scss'; \r\n .xun-${getClassName(
+  const styleContent = `@import '../assets/styles/index.scss'; \r\n .xun-${getClassName(
     componentName,
   )} {}`;
 

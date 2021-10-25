@@ -12,6 +12,9 @@
     margin: 0;
     outline: 0;
     cursor: pointer;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
   input[type='range' i]::-webkit-slider-runnable-track {
     background: coral;
@@ -33,6 +36,9 @@
     -webkit-mask-size: 20px;
     -webkit-mask-repeat: repeat-x;
     height: 20px;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
   input[type='range']::-moz-range-track {
     background: #e8eaed;

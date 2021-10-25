@@ -1,0 +1,57 @@
+.__dumi-default-layout,
+.__dumi-default-mobile-demo-layout {
+  position: fixed !important;
+  z-index: 999 !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.demo-page {
+  margin: 20px 10px;
+  &-title {
+    font-size: 20px;
+  }
+  .demo-block {
+    margin-bottom: 20px;
+
+    .demo-title {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.demo-page-rate {
+  .demo-title {
+    margin-bottom: 10px;
+  }
+}
+
+.demo-page-tag {
+  .xun-tag {
+    margin-right: 10px;
+  }
+}
+
+.demo-page-button {
+  .xun-button {
+    margin-right: 5px;
+  }
+}
+
+.demo-page-error {
+  margin: 0;
+  padding: 0;
+  .demo-block {
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    .demo-title {
+      padding-bottom: 10px;
+      color: #000;
+    }
+  }
+}
