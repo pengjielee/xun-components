@@ -1,0 +1,102 @@
+@import '../style/index.scss';
+.xun-dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #222222;
+  z-index: 300;
+  visibility: visible;
+  opacity: 0.8;
+}
+.xun-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  z-index: 301;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  &-header {
+    /*margin: 8px 10px 8px;
+    text-align: right;*/
+    position: relative;
+  }
+  &-close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  &-body {
+    font-size: 26px;
+    color: #31373f;
+    margin: 40px 0 45px;
+    padding: 0 30px;
+    line-height: 43px;
+  }
+  &-footer {
+    padding: 0;
+    display: flex;
+    button {
+      width: 100%;
+      padding: 18px 0;
+      margin: 0;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.xun-dialog-alert,
+.xun-dialog-confirm {
+  border-radius: 10px;
+  .xun-dialog-body {
+    margin: 20px 0;
+    .xun-dialog-title {
+      font-size: 17px;
+      font-weight: bold;
+      color: #31373f;
+      margin-bottom: -15px;
+    }
+    .xun-dialog-content {
+      font-size: 14px;
+      font-weight: 400;
+      color: #31373f;
+      line-height: 22px;
+      margin: 30px 0 25px;
+    }
+  }
+  .xun-dialog-footer {
+    position: relative;
+    padding: 15px 0;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f22d50;
+    cursor: pointer;
+  }
+}
+
+.xun-dialog-confirm {
+  .xun-dialog-footer {
+    padding: 0;
+    .btn-confirm,
+    .btn-cancel {
+      background: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn-confirm {
+      font-weight: bold;
+      color: #f22d50;
+      border-radius: 0 0 10px 0;
+    }
+    .btn-cancel {
+      border-radius: 0 0 0 10px;
+    }
+  }
+}

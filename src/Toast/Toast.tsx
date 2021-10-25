@@ -6,20 +6,14 @@ import './style.scss';
 const classPrefix = 'xun-toast';
 
 interface IProps {
-  type?: 'default' | 'success' | 'fail' | 'info' | 'warn' | 'error';
+  type?: 'success' | 'failure' | 'info' | 'warning' | 'error';
   className?: string;
   hasMask?: boolean;
   content?: React.ReactNode;
 }
 
 const Toast: FC<IProps> = (props) => {
-  const {
-    type = 'default',
-    hasMask = false,
-    content,
-    className,
-    children,
-  } = props;
+  const { type = 'info', hasMask = false, content, className } = props;
 
   const finalClassName = classnames(
     classPrefix,
@@ -29,7 +23,7 @@ const Toast: FC<IProps> = (props) => {
 
   return (
     <>
-      {hasMask ? <Mask theme="light" opacity={1}></Mask> : null}
+      {hasMask && <Mask theme="light" opacity={1} />}
       <div className={finalClassName}>
         <div className={`${classPrefix}__content`}>{content}</div>
       </div>

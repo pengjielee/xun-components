@@ -1,16 +1,16 @@
-## Switch
+## Loader
 
 使用:
 
 ```tsx
 import React, { useState } from 'react';
-import { Switch } from 'xun-components';
+import { Loader } from 'xun-components';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <Switch>Switch</Switch>
+      <Loader></Loader>
     </>
   );
 };

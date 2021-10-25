@@ -5,11 +5,14 @@ const classPrefix = `xun-water-mark`;
 
 interface IProps {
   content?: string;
+  image?: string;
   gapX?: number;
   gapY?: number;
   zIndex?: number;
   width?: number;
   height?: number;
+  imageWidth?: number;
+  imageHeight?: number;
   rotate?: number;
   content?: string;
   fontColor?: string;
@@ -21,20 +24,22 @@ interface IProps {
 
 const WaterMark: React.FC<IProps> = (props) => {
   const {
-    style,
     className,
     zIndex = 2000,
-    gapX = 24,
-    gapY = 48,
+    gapX = 20,
+    gapY = 20,
     width = 120,
-    height = 64,
-    rotate = -22,
+    height = 60,
+    rotate = -20,
     content = 'watermark',
     fontStyle = 'normal',
     fontWeight = 'normal',
     fontColor = 'rgba(0,0,0,.15)',
     fontSize = 14,
     fontFamily = 'sans-serif',
+    image,
+    imageWidth,
+    imageHeight,
   } = props;
 
   const finalClassName = classnames(`${classPrefix}`, className);
@@ -57,7 +62,25 @@ const WaterMark: React.FC<IProps> = (props) => {
     canvas.setAttribute('height', canvasHeight);
 
     if (ctx) {
-      if (content) {
+      if (image) {
+        ctx.translate(markWidth / 2, markHeight / 2);
+        ctx.rotate((Math.PI / 180) * Number(rotate));
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.referrerPolicy = 'no-referrer';
+        img.src = image;
+        img.onload = () => {
+          ctx.drawImage(
+            img,
+            (-imageWidth * ratio) / 2,
+            (-imageHeight * ratio) / 2,
+            imageWidth * ratio,
+            imageHeight * ratio,
+          );
+          ctx.restore();
+          setBase64Url(canvas.toDataURL());
+        };
+      } else if (content) {
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
         ctx.translate(markWidth / 2, markHeight / 2);
@@ -69,6 +92,7 @@ const WaterMark: React.FC<IProps> = (props) => {
 
         ctx.fillText(content, 0, 0);
         ctx.restore();
+
         setBase64Url(canvas.toDataURL());
       }
     } else {
@@ -86,6 +110,7 @@ const WaterMark: React.FC<IProps> = (props) => {
     fontColor,
     content,
     fontSize,
+    image,
   ]);
 
   return (

@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import './style.scss';
@@ -12,21 +6,31 @@ import './style.scss';
 const classPrefix = `xun-text-area`;
 
 interface IProps {
-  text?: string;
+  id?: string;
   rows?: number;
+  value?: string;
+  placeholder?: string;
+  maxLength?: number;
+  disabled?: boolean;
+  readOnly?: boolean;
+  focused?: boolean;
+  className?: string;
+  onChange?: (value) => void;
+  onBlur?: (value) => void;
+  onFocus?: (value) => void;
 }
 
 const TextArea: React.FC<IProps> = (props) => {
   const textAreaRef = useRef(null);
 
   const {
-    id = Date.now(),
+    id = Date.now() + '',
     className,
-    rows,
+    rows = 4,
     maxLength,
-    disabled,
-    readOnly,
-    focused,
+    disabled = false,
+    readOnly = false,
+    focused = false,
     value,
     ...rest
   } = props;
@@ -49,9 +53,7 @@ const TextArea: React.FC<IProps> = (props) => {
   return (
     <div className={classnames(`${classPrefix}-wrapper`, className)}>
       {readOnly ? (
-        <div className={`${classPrefix}__content`} ref={textAreaRef}>
-          {value}
-        </div>
+        <div className={`${classPrefix}__content`}>{value}</div>
       ) : (
         <textarea
           ref={textAreaRef}
@@ -68,6 +70,7 @@ const TextArea: React.FC<IProps> = (props) => {
             props.onBlur?.(e);
           }}
           id={props.id}
+          {...rest}
         />
       )}
     </div>

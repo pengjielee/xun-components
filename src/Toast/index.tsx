@@ -18,10 +18,10 @@ const createToast = (content, options) => {
 };
 
 const Toast = {
-  show: (t, o) => createToast(t, { ...o, type: 'default' }),
+  show: (t, o) => createToast(t, { ...o, type: '' }),
   success: (t, o) => createToast(t, { ...o, type: 'success' }),
-  fail: (t, o) => createToast(t, { ...o, type: 'fail' }),
-  warn: (t, o) => createToast(t, { ...o, type: 'warn' }),
+  failure: (t, o) => createToast(t, { ...o, type: 'failure' }),
+  warning: (t, o) => createToast(t, { ...o, type: 'warning' }),
   info: (t, o) => createToast(t, { ...o, type: 'info' }),
 };
 

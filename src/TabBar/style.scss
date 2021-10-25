@@ -1,0 +1,27 @@
+@import '../style/index.scss';
+
+.xun-tab-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: 50px;
+  font-size: 14px;
+  &__item {
+    flex: 1;
+    color: #999;
+    white-space: nowrap;
+    padding: 4px 8px;
+    width: min-content;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &-active {
+      color: red;
+    }
+  }
+}

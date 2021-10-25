@@ -1,0 +1,20 @@
+@import '../style/index.scss';
+
+.xun-loader {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 100%;
+  border-color: #eee;
+  border-right-color: #616161;
+  animation: rotate 0.65s linear infinite;
+  &__small {
+    width: 15px;
+    height: 15px;
+  }
+  &__large {
+    width: 30px;
+    height: 30px;
+  }
+}

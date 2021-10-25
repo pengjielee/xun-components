@@ -1,13 +1,18 @@
 :root {
   --zindex-mask: 1000;
   --zindex-popup: 1001;
+  --zindex-toast: 1001;
 
   --action-sheet-background: #fff;
 
-  --color-primary: '';
-  --color-default: #000000;
-  --color-success: #07bc0c;
+  --color-default: #cdd3d8;
+  --color-primary: #6777ef;
+  --color-success: #63ed7a;
   --color-failure: #e74c3c;
-  --color-info: #3498db;
-  --color-warning: #f1c40f;
+  --color-info: #3abaf4;
+  --color-warning: #ffa426;
+  --color-danger: #fc544b;
+
+  --color-light: #191d21;
+  --color-dark: #191d21;
 }
