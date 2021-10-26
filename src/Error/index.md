@@ -14,31 +14,25 @@ const Demo = () => (
     </header>
     <main>
       <div className="demo-block">
-        <div className="demo-title">默认</div>
-        <Error description="出错了"></Error>
+        <Error description="默认错误"></Error>
       </div>
 
       <div className="demo-block">
-        <div className="demo-title">数据库错误</div>
-        <Error type="database" description="出错了"></Error>
+        <Error type="database" description="数据库错误"></Error>
       </div>
 
       <div className="demo-block">
-        <div className="demo-title">网络错误</div>
-        <Error type="wifi" description="出错了"></Error>
+        <Error type="wifi" description="网络错误"></Error>
       </div>
       <div className="demo-block">
-        <div className="demo-title">哭脸</div>
         <Error type="face" description="出错了"></Error>
       </div>
       <div className="demo-block">
-        <div className="demo-title">位置错误</div>
-        <Error type="location" description="出错了"></Error>
+        <Error type="location" description="位置错误"></Error>
       </div>
       <div className="demo-block">
-        <div className="demo-title">自定义描述信息文字样式</div>
         <Error
-          description="出错了"
+          description="自定义描述信息文字样式"
           descStyle={{ fontSize: '20px', color: 'red' }}
         ></Error>
       </div>

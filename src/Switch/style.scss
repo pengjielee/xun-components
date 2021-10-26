@@ -14,19 +14,30 @@
     z-index: 2;
     border: 0;
     appearance: none;
+    cursor: pointer;
+  }
+  &__disabled {
+    .xun-switch__container {
+      opacity: 0.5;
+    }
+    .xun-switch__checkbox {
+      cursor: not-allowed;
+    }
   }
   &__container {
     position: relative;
     width: 48px;
     height: 28px;
+    line-height: 28px;
     border-radius: 28px;
-    background: #a7aaa6;
+    background: var(--color-unchecked);
     z-index: 0;
     margin: 0;
     padding: 0;
     appearance: none;
     border: 0;
     transition: all 0.3s;
+
     &::after {
       position: absolute;
       left: 1px;
@@ -38,10 +49,17 @@
       content: '';
       transition: all 0.3s;
     }
+    &-inner {
+      color: #fff;
+      margin-left: 28px;
+    }
     &-checked {
-      background-color: #4dd865;
+      background-color: var(--color-checked);
       &::after {
         transform: translateX(20px);
+      }
+      .xun-switch__container-inner {
+        margin-left: 5px;
       }
     }
   }

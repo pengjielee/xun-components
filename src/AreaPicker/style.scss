@@ -1,0 +1,21 @@
+@import '../assets/styles/index.scss';
+.xun-area-picker {
+  font-size: 14px;
+
+  &__header {
+    padding: 15px 10px;
+    text-align: center;
+  }
+  &__body {
+    max-height: 50vh;
+    padding: 0 10px;
+    overflow-y: scroll;
+  }
+  &__item {
+    padding: 10px 0px;
+    cursor: pointer;
+    &-active {
+      color: red;
+    }
+  }
+}

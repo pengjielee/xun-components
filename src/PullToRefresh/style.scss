@@ -1,0 +1,13 @@
+@import '../assets/styles/index.scss';
+.xun-pull-to-refresh {
+  &__header {
+    overflow: hidden;
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+}

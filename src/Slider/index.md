@@ -3,10 +3,17 @@
 使用:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Slider } from 'xun-components';
 
-const Demo = () => <Slider>Slider</Slider>;
+const Demo = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Slider>Slider</Slider>
+    </>
+  );
+};
 
 export default Demo;
 ```

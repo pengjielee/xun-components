@@ -2,6 +2,7 @@
 
 .xun-popup {
   position: fixed;
+  z-index: var(--zindex-popup);
   &__body {
     position: fixed;
     z-index: var(--zindex-popup);

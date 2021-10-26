@@ -4,6 +4,9 @@
   display: flex;
   align-items: center;
   height: 30px;
+  &__disabled {
+    cursor: not-allowed;
+  }
   /* chrome */
   &__input::-webkit-outer-spin-button,
   &__input::-webkit-inner-spin-button {
@@ -22,21 +25,32 @@
   &__input-wrapper {
     height: 30px;
   }
-  &__add,
+  &__plus,
   &__minus {
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    border: 1px solid #ddd;
-    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
     background: #fff;
-    cursor: pointer;
+    font-weight: normal;
+    border: 1px solid #ddd;
+    color: #333;
+    &:hover {
+      background: unset;
+    }
+    &.disabled {
+      background: #eee;
+    }
   }
   &__input {
     margin: 0 5px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     text-align: center;
     border: 1px solid #ddd;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }

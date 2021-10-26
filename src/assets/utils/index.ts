@@ -95,3 +95,34 @@ export function getDarkColor(hex) {
   const l = Math.floor(hsl[2]) - 20 + '%';
   return `hsl(${h} ${s} ${l})`;
 }
+
+/* https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#%E4%BD%BF%E7%94%A8_passive_%E6%94%B9%E5%96%84%E7%9A%84%E6%BB%9A%E5%B1%8F%E6%80%A7%E8%83%BD*/
+export let passiveIfSupported = false;
+
+try {
+  const opts = Object.defineProperty({}, 'passive', {
+    get: function () {
+      passiveIfSupported = true;
+    },
+  });
+
+  window.addEventListener('test', null, opts);
+} catch (err) {}
+
+export const sleep = (time: number) =>
+  new Promise((resolve) => setTimeout(resolve, time));
+
+export function bound(
+  position: number,
+  min: number | undefined,
+  max: number | undefined,
+) {
+  let ret = position;
+  if (min !== undefined) {
+    ret = Math.max(position, min);
+  }
+  if (max !== undefined) {
+    ret = Math.min(ret, max);
+  }
+  return ret;
+}

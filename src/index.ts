@@ -9,6 +9,7 @@ export { default as Collapse } from './Collapse';
 export { default as Dialog } from './Dialog';
 export { default as DatePicker } from './DatePicker';
 export { default as FilePicker } from './FilePicker';
+export { default as Grid } from './Grid';
 export { default as Input } from './Input';
 export { default as Loader } from './Loader';
 export { default as Loading } from './Loading';
@@ -21,8 +22,7 @@ export { default as Picker } from './Picker';
 export { default as Popup } from './Popup';
 export { default as Progress } from './Progress';
 export { default as ProgressBar } from './ProgressBar';
-export { default as Pull } from './Pull';
-
+export { default as PullToRefresh } from './PullToRefresh';
 export { default as Radio } from './Radio';
 export { default as SearchBar } from './SearchBar';
 export { default as SideBar } from './SideBar';
