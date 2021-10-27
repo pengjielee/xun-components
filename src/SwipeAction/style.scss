@@ -1,0 +1,26 @@
+@import '../assets/styles/index.scss';
+.xun-swipe-action {
+  cursor: grab;
+  overflow: hidden;
+  font-size: 14px;
+  &__inner {
+    position: relative;
+    overflow: visible;
+  }
+  &__content {
+  }
+  &__actions {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: fit-content;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    color: red;
+    .xun-button {
+      padding: 0 20px;
+    }
+  }
+}

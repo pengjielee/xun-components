@@ -1,12 +1,5 @@
-import React from 'react';
+import { attachPropertiesToComponent } from '../assets/utils';
+import Radio from './Radio';
+import RadioGroup from './RadioGroup';
 
-interface IProps {
-  text?: string;
-}
-
-const Radio: React.FC<IProps> = (props) => {
-  const { text, children } = props;
-  return <div className="xun-radio">{children}</div>;
-};
-
-export default Radio;
+export default attachPropertiesToComponent(Radio, { Group: RadioGroup });

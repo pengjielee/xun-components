@@ -22,6 +22,7 @@ export { default as Progress } from './Progress';
 export { default as ProgressBar } from './ProgressBar';
 export { default as PullToRefresh } from './PullToRefresh';
 export { default as Radio } from './Radio';
+export { default as SwipeAction } from './SwipeAction';
 export { default as SearchBar } from './SearchBar';
 export { default as SideBar } from './SideBar';
 export { default as Stepper } from './Stepper';
