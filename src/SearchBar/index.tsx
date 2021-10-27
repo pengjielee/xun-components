@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import SearchIcon from './search.svg';
 import './style.scss';
@@ -6,21 +6,74 @@ import './style.scss';
 const classPrefix = 'xun-search-bar';
 
 interface IProps {
-  text?: string;
+  value?: string;
+  defaultValue?: string;
+  maxLength?: number;
+  placeholder?: string;
+  clearable?: boolean;
+  disabled?: boolean;
+  showCancel?: boolean;
+  cancelText?: string;
+  onSubmit?: (val: string) => void;
+  onChange?: (val: string) => void;
+  onCancel?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
   className?: string;
 }
 
 const SearchBar: FC<IProps> = (props) => {
-  const { className, text, children } = props;
+  const {
+    maxLength,
+    placeholder = '搜索',
+    disabled,
+    showCancel = true,
+    cancelText = '取消',
+    className,
+  } = props;
 
   const finalClassName = classnames(classPrefix, className);
 
+  const searchInputId = `${classPrefix}-input-${Date.now()}`;
+
+  const [value, setValue] = useState(props.value || props.defaultValue);
+
   return (
     <div className={finalClassName}>
-      <div className={`${classPrefix}__icon`}>
-        <img src={SearchIcon} alt="search" />
-      </div>
-      <div className={`${classPrefix}__text`}>{text}</div>
+      <form
+        action="/"
+        method="get"
+        className={`${classPrefix}__form`}
+        onSubmit={(e) => {
+          props.onSubmit?.(value);
+        }}
+      >
+        <label htmlFor={searchInputId}>
+          <img
+            src={SearchIcon}
+            alt="search"
+            className={`${classPrefix}__icon`}
+          />
+        </label>
+        <input
+          value={value}
+          type="text"
+          id={searchInputId}
+          placeholder={placeholder}
+          className={`${classPrefix}__input`}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          onFocus={(e) => {
+            props.onFocus?.(e);
+          }}
+          onBlur={(e) => {
+            props.onBlur?.(e);
+          }}
+        />
+      </form>
+
+      {showCancel && <a className={`${classPrefix}__cancel`}>{cancelText}</a>}
     </div>
   );
 };

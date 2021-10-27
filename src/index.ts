@@ -9,6 +9,7 @@ export { default as Dialog } from './Dialog';
 export { default as FilePicker } from './FilePicker';
 export { default as Grid } from './Grid';
 export { default as Input } from './Input';
+export { default as IndexBar } from './IndexBar';
 export { default as Loader } from './Loader';
 export { default as Loading } from './Loading';
 export { default as Message } from './Message';

@@ -3,10 +3,17 @@
 使用:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { IndexBar } from 'xun-components';
 
-const Demo = () => <IndexBar>IndexBar</IndexBar>;
+const Demo = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <IndexBar>IndexBar</IndexBar>
+    </>
+  );
+};
 
 export default Demo;
 ```
