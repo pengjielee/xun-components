@@ -3,13 +3,28 @@
   font-size: 14px;
 
   &__header {
-    padding: 15px 10px;
+    padding: 15px 15px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    span {
+      cursor: pointer;
+      flex: 0 1 33.33%;
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
   }
   &__body {
     max-height: 50vh;
+    min-height: 50vh;
     padding: 0 10px;
     overflow-y: scroll;
+    color: #666;
   }
   &__item {
     padding: 10px 0px;

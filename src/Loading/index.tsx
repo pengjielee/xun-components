@@ -20,7 +20,8 @@ const clear = () => {
 };
 
 const mount = (options) => {
-  const { duration = 2000, content } = options;
+  const duration = (options && options.duration) || 2000;
+  const content = (options && options.content) || '';
   let timer = 0;
   const container = document.createElement('div');
   document.body.appendChild(container);

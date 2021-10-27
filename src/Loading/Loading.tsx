@@ -22,10 +22,9 @@ const Loading: FC<IProps> = (props) => {
         <>
           <Mask theme="light" opacity={1}></Mask>
           <div className={finalClassName}>
-            {content ? (
+            <div className={`${classPrefix}__snipper`}></div>
+            {content && (
               <div className={`${classPrefix}__content`}>{content}</div>
-            ) : (
-              <div className={`${classPrefix}__snipper`}></div>
             )}
           </div>
         </>
