@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import Popup from '../Popup';
 import './style.scss';
 
-import DISTRICTS from './data.js';
+import DISTRICTS from './data';
 
 const classPrefix = 'xun-area-picker';
 

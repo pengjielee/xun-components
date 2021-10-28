@@ -41,7 +41,7 @@ const ActionSheet: FC<IProps> = (props) => {
     typeof onCancel === 'function' && onCancel();
   };
 
-  const handleClick = (action) => {
+  const handleClick = (action: Action) => {
     const { disabled = false, onClick } = action;
     if (disabled) {
       return;

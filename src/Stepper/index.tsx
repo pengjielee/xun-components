@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
-import { Button } from 'xun-components';
 import classnames from 'classnames';
 import { bound } from '../assets/utils/';
+import Button from '../Button';
 import './style.scss';
 
 const classPrefix = 'xun-stepper';

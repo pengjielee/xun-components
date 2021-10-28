@@ -44,7 +44,6 @@ const Button: React.FC<IProps> = (props) => {
     disabled = false,
     className = '',
     round = false,
-    style = null,
     children,
   } = props;
 
@@ -72,14 +71,11 @@ const Button: React.FC<IProps> = (props) => {
 
   const hoverColor = getDarkColor(defaultColor);
 
-  const finalStyle = Object.assign(
-    {},
-    {
-      '--radius': borderRadius,
-      '--color': colors[type] || color,
-      '--color-hover': hoverColor,
-    },
-  );
+  const style = {
+    '--radius': borderRadius,
+    '--color': colors[type] || color,
+    '--color-hover': hoverColor,
+  };
 
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
@@ -93,7 +89,7 @@ const Button: React.FC<IProps> = (props) => {
   };
 
   return (
-    <button className={finalClassName} style={finalStyle} onClick={handleClick}>
+    <button className={finalClassName} style={style} onClick={handleClick}>
       {children}
     </button>
   );
