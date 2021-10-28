@@ -18,6 +18,7 @@
   text-decoration: none;
   background-color: var(--color);
   color: #ffffff;
+  border-radius: var(--radius);
   &:hover {
     background: var(--color-hover);
   }

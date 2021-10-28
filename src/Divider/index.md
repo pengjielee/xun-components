@@ -5,6 +5,7 @@
 ```tsx
 import React from 'react';
 import { Divider } from 'xun-components';
+import '../assets/styles/demo.scss';
 
 const Demo = () => (
   <div className="demo-page demo-page-divider">

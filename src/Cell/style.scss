@@ -18,7 +18,7 @@
     width: 100%;
   }
   &__right {
-    flex: 0 1 80px;
+    min-width: 80px;
     justify-content: flex-end;
   }
   &__description {

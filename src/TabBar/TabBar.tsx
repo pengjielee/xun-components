@@ -1,38 +1,50 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
-import TabBarItem from './TabBarItem';
 import './style.scss';
 
 const classPrefix = 'xun-tab-bar';
 
 interface IProps {
-  activeKey?: string;
+  activeKey?: string | number;
+  defaultActiveKey?: string | number;
   className?: string;
   children?: React.ReactNode;
-  onChange?: () => void;
+  onChange?: (value) => void;
 }
 
 const TabBar: FC<IProps> = (props) => {
-  const { className, activeKey, children, onChange } = props;
+  const { className, activeKey, defaultActiveKey, children } = props;
 
   const finalClassName = classnames(classPrefix, className);
 
-  const renderItems = () => {
-    return React.Children.map(children, (child, index) => {
-      const key = child.key;
-      const active = key === activeKey;
-      return (
-        <TabBarItem
-          {...child.props}
-          active={active}
-          onChange={onChange}
-          itemKey={key}
-        />
-      );
-    });
+  const getSelected = (index: number, itemKey: string | number) => {
+    if (!activeKey) {
+      if (!defaultActiveKey && index === 0) {
+        return true;
+      }
+      return defaultActiveKey === itemKey;
+    }
+    return activeKey === itemKey;
   };
 
-  return <div className={finalClassName}>{renderItems()}</div>;
+  const items = React.Children.map(children, (element, index) => {
+    if (!React.isValidElement(element)) {
+      return null;
+    }
+
+    const itemKey = element.props.itemKey || index;
+    return React.cloneElement(element, {
+      key: index,
+      onChange: () => props.onChange?.(itemKey),
+      badge: element.props.badge,
+      title: element.props.title,
+      icon: element.props.icon,
+      itemKey,
+      selected: getSelected(index, itemKey),
+    });
+  });
+
+  return <div className={finalClassName}>{items}</div>;
 };
 
 export default TabBar;

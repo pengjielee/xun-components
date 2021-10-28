@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import Mask from '../Mask';
+import Button from '../Button';
 import './style.scss';
+import CloseIcon from './close.svg';
+import { attachPropertiesToComponent } from '../assets/utils';
 
 const classPrefix = 'xun-dialog';
 
@@ -15,11 +19,9 @@ interface IProps {
   children?: React.ReactNode;
   onClose?: React.MouseEventHandler;
   footer?: React.ReactNode;
+  onMaskClick?: () => void;
+  onClose?: () => void;
 }
-
-const sc = (name?: string) => {
-  return [classPrefix, name].filter(Boolean).join('-');
-};
 
 const Dialog: React.FC<IProps> = (props) => {
   const {
@@ -29,51 +31,33 @@ const Dialog: React.FC<IProps> = (props) => {
     buttons = [],
     onClose,
     type = 'default',
-    width = 350,
+    width = 300,
     footer,
   } = props;
 
-  const haneleMaskClick = (e: React.MouseEvent) => {
-    onClose && onClose(e);
-  };
-  const handleCloseClick = (e: React.MouseEvent) => {
-    onClose && onClose(e);
-  };
-
-  var dialogClassName = classnames(`${classPrefix}`, {
+  var finalClassName = classnames(`${classPrefix}`, {
     [`${classPrefix}-${type}`]: true,
   });
 
   const Element = visible ? (
     <>
-      <div className={sc('mask')} onClick={haneleMaskClick}></div>
-      <div className={dialogClassName} style={{ width: `${width}px` }}>
-        <header className={sc('header')}>
+      <Mask onClick={props.onMaskClick} />
+      <div className={finalClassName} style={{ width: `${width}px` }}>
+        <header className={classnames(`${classPrefix}__header`)}>
           {showClose ? (
-            <div className={sc('close')} onClick={handleCloseClick}>
-              <svg
-                viewBox="0 0 1024 1024"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                p-id="2071"
-                data-spm-anchor-id="a313x.7781069.0.i0"
-                width="32"
-                height="32"
-              >
-                <path
-                  d="M810.666667 273.493333L750.506667 213.333333 512 451.84 273.493333 213.333333 213.333333 273.493333 451.84 512 213.333333 750.506667 273.493333 810.666667 512 572.16 750.506667 810.666667 810.666667 750.506667 572.16 512z"
-                  p-id="2072"
-                  fill="#e6e6e6"
-                ></path>
-              </svg>
+            <div
+              className={classnames(`${classPrefix}__close`)}
+              onClick={props.onClose}
+            >
+              <img src={CloseIcon} />
             </div>
           ) : null}
         </header>
-        <main className={sc('body')}>{children}</main>
+        <div className={classnames(`${classPrefix}__body`)}>{children}</div>
         {footer ? (
           footer
         ) : (
-          <footer className={sc('footer')}>
+          <footer className={classnames(`${classPrefix}__footer`)}>
             {buttons.map((button, index) => {
               return React.cloneElement(button, { key: index });
             })}
@@ -102,8 +86,10 @@ const Modal = (
 
   const component = (
     <Dialog type={type} visible={true} footer={footer} onClose={onClose}>
-      {title ? <div className={sc('title')}>{title}</div> : null}
-      <div className={sc('content')}>{content}</div>
+      {title ? (
+        <div className={classnames(`${classPrefix}__title`)}>{title}</div>
+      ) : null}
+      <div className={classnames(`${classPrefix}__content`)}>{content}</div>
     </Dialog>
   );
   const div = document.createElement('div');
@@ -113,7 +99,7 @@ const Modal = (
 };
 
 const Alert = (title: string, content: string) => {
-  const footerClass = classnames(sc('footer'), {
+  const footerClass = classnames(`${classPrefix}__footer`, {
     'hairline--top': true,
   });
 
@@ -140,21 +126,25 @@ const Confirm = (
     close();
     no && no();
   };
-  const footerClass = classnames(sc('footer'), {
+  const footerClass = classnames(`${classPrefix}__footer`, {
     'hairline--top': true,
   });
 
   const footer = (
     <footer className={footerClass}>
-      <button className="btn-cancel hairline--right" onClick={onCancel}>
+      <Button className="btn-cancel hairline--right" onClick={onCancel}>
         取消
-      </button>
-      <button className="btn-confirm" onClick={onConfirm}>
+      </Button>
+      <Button className="btn-confirm" onClick={onConfirm}>
         确认
-      </button>
+      </Button>
     </footer>
   );
   const close = Modal(title, content, footer, 'confirm');
 };
 
-export default Dialog;
+export default attachPropertiesToComponent(Dialog, {
+  alert: Alert,
+  confirm: Confirm,
+  modal: Modal,
+});

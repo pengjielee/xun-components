@@ -1,12 +1,5 @@
-import React from 'react';
+import { attachPropertiesToComponent } from '../assets/utils';
+import Checkbox from './Checkbox';
+import CheckboxGroup from './CheckboxGroup';
 
-interface IProps {
-  text?: string;
-}
-
-const Checkbox: React.FC<IProps> = (props) => {
-  const { text, children } = props;
-  return <div className="xun-checkbox">{children}</div>;
-};
-
-export default Checkbox;
+export default attachPropertiesToComponent(Checkbox, { Group: CheckboxGroup });

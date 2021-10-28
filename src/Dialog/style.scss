@@ -1,44 +1,34 @@
 @import '../assets/styles/index.scss';
-.xun-dialog-mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #222222;
-  z-index: 300;
-  visibility: visible;
-  opacity: 0.8;
-}
+
 .xun-dialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
-  z-index: 301;
+  max-width: 350px;
+  z-index: 1001;
   background: #fff;
   text-align: center;
   box-sizing: border-box;
-  &-header {
+  &__header {
     /*margin: 8px 10px 8px;
     text-align: right;*/
     position: relative;
   }
-  &-close {
+  &__close {
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
   }
-  &-body {
+  &__body {
     font-size: 26px;
     color: #31373f;
     margin: 40px 0 45px;
     padding: 0 30px;
     line-height: 43px;
   }
-  &-footer {
+  &__footer {
     padding: 0;
     display: flex;
     button {
@@ -54,15 +44,15 @@
 .xun-dialog-alert,
 .xun-dialog-confirm {
   border-radius: 10px;
-  .xun-dialog-body {
+  .xun-dialog__body {
     margin: 20px 0;
-    .xun-dialog-title {
+    .xun-dialog__title {
       font-size: 17px;
       font-weight: bold;
       color: #31373f;
       margin-bottom: -15px;
     }
-    .xun-dialog-content {
+    .xun-dialog__content {
       font-size: 14px;
       font-weight: 400;
       color: #31373f;
@@ -70,7 +60,7 @@
       margin: 30px 0 25px;
     }
   }
-  .xun-dialog-footer {
+  .xun-dialog__footer {
     position: relative;
     padding: 15px 0;
     justify-content: center;
@@ -82,13 +72,14 @@
 }
 
 .xun-dialog-confirm {
-  .xun-dialog-footer {
+  .xun-dialog__footer {
     padding: 0;
     .btn-confirm,
     .btn-cancel {
       background: #fff;
       font-size: 14px;
       cursor: pointer;
+      color: #333;
     }
     .btn-confirm {
       font-weight: bold;

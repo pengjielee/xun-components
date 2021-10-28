@@ -42,8 +42,6 @@ const Popup: FC<IProps> = (props) => {
     container = document.body,
   } = props;
 
-  console.log(container);
-
   const finalClassName = classnames(classPrefix, className);
 
   const { percent } = useSpring({

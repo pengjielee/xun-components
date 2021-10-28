@@ -5,6 +5,7 @@
 ```tsx
 import React, { useState } from 'react';
 import { Radio } from 'xun-components';
+import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [value, setValue] = useState('1');
@@ -14,13 +15,24 @@ const Demo = () => {
     setValue(value);
   };
   return (
-    <>
-      <Radio>Radio</Radio>
-      <Radio.Group value={value} onChange={handleChange}>
-        <Radio value="1">Radio1</Radio>
-        <Radio value="2">Radio2</Radio>
-      </Radio.Group>
-    </>
+    <div className="demo-page demo-page-checckbox">
+      <header>
+        <h3 className="demo-page-title">单选框</h3>
+      </header>
+      <main>
+        <div className="demo-block">
+          <div className="demo-title">默认</div>
+          <Radio>Radio</Radio>
+        </div>
+        <div className="demo-block">
+          <div className="demo-title">选项组</div>
+          <Radio.Group value={value} onChange={handleChange}>
+            <Radio value="1">Radio1</Radio>
+            <Radio value="2">Radio2</Radio>
+          </Radio.Group>
+        </div>
+      </main>
+    </div>
   );
 };
 

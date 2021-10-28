@@ -1,0 +1,19 @@
+@import '../assets/styles/index.scss';
+.xun-card {
+  font-size: 14px;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    &-more {
+    }
+  }
+  &__body {
+  }
+}

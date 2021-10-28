@@ -8,12 +8,16 @@ interface IProps {
   itemKey?: string;
   title?: string;
   icon?: React.ReactNode;
+  badge?: React.ReactNode;
+  selected?: boolean;
+  onChange?: () => void;
 }
 
 const TabBarItem: FC<IProps> = (props) => {
-  const { itemKey, title, icon, active = false, onChange } = props;
+  const { itemKey, title, icon, selected = false, onChange } = props;
+
   const finalClassName = classnames(classPrefix, {
-    [`${classPrefix}-active`]: active,
+    [`${classPrefix}-active`]: selected,
   });
 
   const handleClick = () => {
@@ -22,8 +26,8 @@ const TabBarItem: FC<IProps> = (props) => {
 
   return (
     <div className={finalClassName} onClick={handleClick}>
-      <div className={`${classPrefix}-icon`}>{icon}</div>
-      <div className={`${classPrefix}-title`}>{title}</div>
+      {icon && <div className={`${classPrefix}-icon`}>{icon}</div>}
+      {title && <div className={`${classPrefix}-title`}>{title}</div>}
     </div>
   );
 };

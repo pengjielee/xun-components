@@ -71,16 +71,14 @@ const Button: React.FC<IProps> = (props) => {
     ) || color;
 
   const hoverColor = getDarkColor(defaultColor);
-  console.log(hoverColor);
 
   const finalStyle = Object.assign(
     {},
     {
-      borderRadius: borderRadius,
+      '--radius': borderRadius,
       '--color': colors[type] || color,
       '--color-hover': hoverColor,
     },
-    { ...style },
   );
 
   const handleClick = (

@@ -1,0 +1,25 @@
+@import '../assets/styles/index.scss';
+
+.xun-checkbox {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  input {
+    display: none;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    &-checked {
+      width: 100%;
+    }
+    &-unchecked {
+      width: 100%;
+    }
+  }
+  &__content {
+    margin-left: 5px;
+  }
+}

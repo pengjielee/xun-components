@@ -26,12 +26,13 @@
     &__description {
       font-size: 14px;
       color: #999;
+      margin-top: 3px;
     }
     &__anchor {
       cursor: pointer;
     }
     &__content {
-      margin-bottom: 3px;
+      /*margin-bottom: 3px;*/
     }
   }
 }

@@ -1,4 +1,4 @@
-.__dumi-default-layout,
+/*.__dumi-default-layout,
 .__dumi-default-mobile-demo-layout {
   position: fixed !important;
   z-index: 999 !important;
@@ -8,6 +8,7 @@
   height: 100%;
   overflow-y: scroll;
 }
+*/
 
 .demo-page {
   margin: 20px 10px;
@@ -61,5 +62,12 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
+  }
+}
+
+.demo-page-tabbar {
+  margin: 0;
+  .xun-tab-bar {
+    background: #eee;
   }
 }

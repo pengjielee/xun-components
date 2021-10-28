@@ -39,6 +39,9 @@ const SwipeAction: FC<IProps> = (props) => {
       const [offsetX] = state.offset;
 
       if (offsetX > 0) {
+        api.start({
+          x: 0,
+        });
         return;
       }
       if (state.last) {

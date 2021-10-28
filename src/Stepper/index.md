@@ -10,7 +10,6 @@ import '../assets/styles/demo.scss';
 const Demo = () => {
   const [visible, setVisible] = useState(false);
   const [value, setValue] = useState(1);
-  console.log(value);
 
   return (
     <div className="demo-page">
