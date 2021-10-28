@@ -1,0 +1,43 @@
+@import '../assets/styles/index.scss';
+.xun-keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  @include onepx(bottom right);
+  &__keys {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    flex: 0 1 33.33%;
+    cursor: pointer;
+    @include onepx(top left);
+    &:nth-of-type(3n + 1) {
+      @include onepx(top);
+    }
+    &:active {
+      background: #e6e6e6;
+    }
+    &-ok {
+      background: #00bc70;
+      color: #fff;
+      font-size: 22px;
+    }
+  }
+  &__action {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    .xun-keyboard__item {
+      flex: 1 1;
+    }
+  }
+}
