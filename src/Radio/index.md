@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { Radio } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [value, setValue] = useState('1');

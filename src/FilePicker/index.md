@@ -5,7 +5,6 @@
 ```tsx
 import React from 'react';
 import { FilePicker } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const handleChange = (files) => {

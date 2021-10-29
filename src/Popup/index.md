@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState, useRef } from 'react';
 import { Popup, Cell, Button } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const containerRef = useRef(null);

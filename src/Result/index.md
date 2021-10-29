@@ -5,7 +5,6 @@
 ```tsx
 import React from 'react';
 import { Result } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => (
   <div className="demo-page">

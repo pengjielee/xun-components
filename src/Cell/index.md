@@ -5,7 +5,6 @@
 ```tsx
 import React from 'react';
 import { Cell } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const img =
   'https://static.zhongan.com/website/health/zarm/images/icons/state.png';

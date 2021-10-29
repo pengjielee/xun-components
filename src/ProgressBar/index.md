@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { ProgressBar, Button } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [percent, setPercent] = useState(10);

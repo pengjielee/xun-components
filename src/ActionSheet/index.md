@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { ActionSheet, Cell, Button } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const actions = [
   {

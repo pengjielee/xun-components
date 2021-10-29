@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { Marquee, Cell } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

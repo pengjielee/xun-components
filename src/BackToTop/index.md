@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { BackToTop, Cell } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

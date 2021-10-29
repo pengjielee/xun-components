@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { TextArea } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [value, setValue] = useState('hello');

@@ -5,7 +5,6 @@
 ```tsx
 import React from 'react';
 import { Toast, Cell, Button } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   return (

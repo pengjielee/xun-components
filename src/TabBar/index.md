@@ -6,7 +6,6 @@
 import React, { useState } from 'react';
 import { TabBar } from 'xun-components';
 import { Home, Message, Shop, Mine } from 'xun-icons';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [activeKey, setActiveKey] = useState('1');

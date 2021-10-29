@@ -5,7 +5,6 @@
 ```tsx
 import React, { useState } from 'react';
 import { Rate } from 'xun-components';
-import '../assets/styles/demo.scss';
 
 const Demo = () => {
   const [value1, setValue1] = useState(0);
