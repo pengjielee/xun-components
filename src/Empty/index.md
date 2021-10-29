@@ -10,7 +10,7 @@ import '../assets/styles/demo.scss';
 const Demo = () => (
   <div className="demo-page demo-page-button">
     <header>
-      <h3 className="demo-page-title">按钮</h3>
+      <h3 className="demo-page-title">无数据</h3>
     </header>
     <main>
       <Empty></Empty>

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import { Back } from 'xun-icons';
 import './style.scss';
-import BackArrow from './back.svg';
 
 const classPrefix = 'xun-nav-bar';
 
@@ -31,7 +31,9 @@ const NavBar: FC<IProps> = (props) => {
     <div className={finalClassName}>
       <div className={`${classPrefix}__left`}>
         {backArrow && (
-          <img src={BackArrow} className={`${classPrefix}__back-arrow`} />
+          <div className={`${classPrefix}__back-arrow`}>
+            <Back />
+          </div>
         )}
         {backText && (
           <span className={`${classPrefix}__back-text`}>{backText}</span>

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import './style.scss';
-import ArrowRight from './arrow-right.svg';
+import { ArrowRight } from 'xun-icons';
 
 const classPrefix = 'xun-collapse';
 
@@ -53,7 +53,9 @@ const Collapse: FC<IProps> = (props) => {
               )}
             >
               <div className={`${classPrefix}__title`}>{title}</div>
-              <img src={ArrowRight} className="icon-arrow" alt="arrow" />
+              <i className="icon-arrow">
+                <ArrowRight />
+              </i>
             </div>
             <div
               className={classnames(

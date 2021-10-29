@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import { Default, Database, Face, Location, Wifi } from 'xun-icons';
 import './style.scss';
-import ErrorDefaultIcon from './error-default.svg';
-import ErrorDatabaseIcon from './error-database.svg';
-import ErrorFaceIcon from './error-face.svg';
-import ErrorLocationIcon from './error-location.svg';
-import ErrorWifiIcon from './error-wifi.svg';
 
 const classPrefix = 'xun-error';
 
@@ -36,39 +32,39 @@ const Error: FC<IProps> = (props) => {
     </div>
   );
 
-  let imageSrc = null;
+  let Element = null;
 
   if (image) {
-    imageSrc = image;
-  } else {
-    switch (type) {
-      case 'database':
-        imageSrc = ErrorDatabaseIcon;
-        break;
-      case 'wifi':
-        imageSrc = ErrorWifiIcon;
-        break;
-      case 'face':
-        imageSrc = ErrorFaceIcon;
-        break;
-      case 'location':
-        imageSrc = ErrorLocationIcon;
-        break;
-      default:
-        imageSrc = ErrorDefaultIcon;
-        break;
-    }
-  }
-
-  const imageRender = (
-    <div className={`${classPrefix}__image-container`}>
+    Element = (
       <img
         className={`${classPrefix}__image`}
         src={imageSrc}
         style={imageStyle}
         alt="error"
       />
-    </div>
+    );
+  } else {
+    switch (type) {
+      case 'database':
+        Element = <Database size="60" />;
+        break;
+      case 'wifi':
+        Element = <Wifi size="60" />;
+        break;
+      case 'face':
+        Element = <Face size="60" />;
+        break;
+      case 'location':
+        Element = <Location size="60" />;
+        break;
+      default:
+        Element = <Default size="60" />;
+        break;
+    }
+  }
+
+  const imageRender = (
+    <div className={`${classPrefix}__image-container`}>{Element}</div>
   );
 
   return (

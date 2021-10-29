@@ -2,8 +2,7 @@ import React, { FC, useState, useContext } from 'react';
 import { CheckboxGroupContext } from './Context';
 import classnames from 'classnames';
 import './style.scss';
-import CheckedIcon from './checked.svg';
-import UnCheckedIcon from './unchecked.svg';
+import { CheckedSquare, UncheckedSquare } from 'xun-icons';
 
 const classPrefix = 'xun-checkbox';
 
@@ -72,14 +71,7 @@ const Checkbox: FC<IProps> = (props) => {
         id={id}
       />
       <div className={`${classPrefix}__icon`}>
-        {checked ? (
-          <img className={`${classPrefix}__icon-checked`} src={CheckedIcon} />
-        ) : (
-          <img
-            className={`${classPrefix}__icon-unchecked`}
-            src={UnCheckedIcon}
-          />
-        )}
+        {checked ? <CheckedSquare /> : <UncheckedSquare />}
       </div>
       {children && <div className={`${classPrefix}__content`}>{children}</div>}
     </label>

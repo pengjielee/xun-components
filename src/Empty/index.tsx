@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import { Empty as EmptyIcon } from 'xun-icons';
 import './style.scss';
-import EmptyIcon from './empty.svg';
 
 const classPrefix = 'xun-empty';
 
@@ -24,17 +24,21 @@ const Empty: FC<IProps> = (props) => {
     </div>
   );
 
-  const imageSrc = image ? image : EmptyIcon;
+  let Element = <EmptyIcon size="60" />;
 
-  const imageRender = (
-    <div className={`${classPrefix}__image-container`}>
+  if (image) {
+    Element = (
       <img
         className={`${classPrefix}__image`}
-        src={imageSrc}
+        src={image}
         style={imageStyle}
         alt="empty"
       />
-    </div>
+    );
+  }
+
+  const imageRender = (
+    <div className={`${classPrefix}__image-container`}>{Element}</div>
   );
 
   return (

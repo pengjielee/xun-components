@@ -1,7 +1,7 @@
 import React, { FC, useRef } from 'react';
 import classnames from 'classnames';
+import { Add } from 'xun-icons';
 import './style.scss';
-import IconAdd from './add.svg';
 
 const classPrefix = 'xun-file-picker';
 
@@ -50,11 +50,7 @@ const FilePicker: FC<IProps> = (props) => {
   return (
     <div className={`${classPrefix}__wrapper`}>
       <div className={finalClassName} onClick={handleClick}>
-        {children ? (
-          children
-        ) : (
-          <img className="icon-add" src={IconAdd} alt="add" />
-        )}
+        {children ? children : <Add />}
       </div>
       <input
         ref={fileRef}

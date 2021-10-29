@@ -1,6 +1,6 @@
 {
   "name": "xun-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "pengjielee",
   "scripts": {
     "dev": "dumi dev",
@@ -34,11 +34,9 @@
     "@react-spring/web": "^9.3.0",
     "@use-gesture/react": "^10.1.1",
     "classnames": "^2.3.1",
-    "install": "^0.13.0",
-    "npm": "^8.1.0",
-    "postcss": "^8.3.11",
-    "react": "^16.12.0 || ^17.0.0",
-    "react-svg": "^14.0.17"
+    "react": "^17.0.2",
+    "react-svg": "^14.0.17",
+    "xun-icons": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -60,6 +58,7 @@
     "node-sass": "^6.0.1",
     "onchange": "^7.1.0",
     "parcel-bundler": "^1.12.5",
+    "postcss": "^8.3.11",
     "prettier": "^2.3.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-postcss": "^4.0.1",

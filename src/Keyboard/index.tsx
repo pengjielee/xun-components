@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import { Clear, Keyboard as KeyboardIcon } from 'xun-icons';
 import './style.scss';
-import ClearIcon from './clear.svg';
-import KeyboardIcon from './keyboard.svg';
 
 const classPrefix = 'xun-keyboard';
 
@@ -25,7 +24,7 @@ const Keyboard: FC<IProps> = (props) => {
         {numbers.map((number) => {
           return (
             <div className={`${classPrefix}__item`}>
-              {number != 'x' ? number : <img src={KeyboardIcon} />}
+              {number != 'x' ? number : <KeyboardIcon />}
             </div>
           );
         })}
@@ -37,7 +36,7 @@ const Keyboard: FC<IProps> = (props) => {
             `${classPrefix}__item-clear`,
           )}
         >
-          <img src={ClearIcon} />
+          <Clear />
         </div>
         <div
           className={classnames(

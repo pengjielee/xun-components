@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import classnames from 'classnames';
+import { Close } from 'xun-icons';
 import './style.scss';
-import close from './close.svg';
 
 const classPrefix = 'xun-message';
 
@@ -50,7 +50,7 @@ const Message: FC<IProps> = (props) => {
 
   const closeRender = !hasArrow && closable && (
     <div className={`${classPrefix}__close`} onClick={handleClose}>
-      <img src={close} alt="close" />
+      <Close />
     </div>
   );
 

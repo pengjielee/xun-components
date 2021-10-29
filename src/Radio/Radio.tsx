@@ -1,9 +1,8 @@
 import React, { FC, useState, useContext } from 'react';
 import { RadioGroupContext } from './Context';
 import classnames from 'classnames';
+import { Checked, Unchecked } from 'xun-icons';
 import './style.scss';
-import CheckedIcon from './checked.svg';
-import UnCheckedIcon from './unchecked.svg';
 
 const classPrefix = 'xun-radio';
 
@@ -71,14 +70,7 @@ const Radio: FC<IProps> = (props) => {
         id={id}
       />
       <div className={`${classPrefix}__icon`}>
-        {checked ? (
-          <img className={`${classPrefix}__icon-checked`} src={CheckedIcon} />
-        ) : (
-          <img
-            className={`${classPrefix}__icon-unchecked`}
-            src={UnCheckedIcon}
-          />
-        )}
+        {checked ? <Checked /> : <Unchecked />}
       </div>
       {children && <div className={`${classPrefix}__content`}>{children}</div>}
     </label>

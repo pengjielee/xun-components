@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Mask from '../Mask';
 import Button from '../Button';
+import { Close as CloseIcon } from 'xun-icons';
 import './style.scss';
-import CloseIcon from './close.svg';
 import { attachPropertiesToComponent } from '../assets/utils';
 
 const classPrefix = 'xun-dialog';
@@ -49,7 +49,7 @@ const Dialog: React.FC<IProps> = (props) => {
               className={classnames(`${classPrefix}__close`)}
               onClick={props.onClose}
             >
-              <img src={CloseIcon} />
+              <CloseIcon />
             </div>
           ) : null}
         </header>

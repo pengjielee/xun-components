@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import classnames from 'classnames';
-import SearchIcon from './search.svg';
+import { Search } from 'xun-icons';
 import './style.scss';
 
 const classPrefix = 'xun-search-bar';
@@ -49,11 +49,9 @@ const SearchBar: FC<IProps> = (props) => {
         }}
       >
         <label htmlFor={searchInputId}>
-          <img
-            src={SearchIcon}
-            alt="search"
-            className={`${classPrefix}__icon`}
-          />
+          <i>
+            <Search size="20" />
+          </i>
         </label>
         <input
           value={value}
