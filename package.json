@@ -1,21 +1,21 @@
 {
   "name": "xun-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "pengjielee",
   "scripts": {
     "dev": "dumi dev",
     "start": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father-build",
+    "build1": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "pt": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "pt-watch": "onchange 'src/**/*.{js,jsx,ts,tsx,less,md,json,scss}' -- prettier --write {{changed}}",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "new:comp": "node scripts/newcomp.js",
-    "build:comp": "rollup -c"
+    "newcomp": "node scripts/newcomp.js",
+    "build": "rollup -c && node scripts/copydoc.js"
   },
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -35,7 +35,6 @@
     "@use-gesture/react": "^10.1.1",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
-    "react-svg": "^14.0.17",
     "xun-icons": "^1.0.3"
   },
   "devDependencies": {

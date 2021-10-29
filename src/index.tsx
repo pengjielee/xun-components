@@ -33,7 +33,6 @@ export { default as Tag } from './Tag';
 export { default as Tabs } from './Tabs';
 export { default as TabBar } from './TabBar';
 export { default as List } from './List';
-export { default as Icons } from './Icons';
 export { default as ImageViewer } from './ImageViewer';
 export { default as Error } from './Error';
 export { default as Rate } from './Rate';
