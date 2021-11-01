@@ -10,7 +10,7 @@ import fs from 'fs-extra';
 const componentsPath = path.join(__dirname, 'src');
 const distPath = path.join(__dirname, 'dist');
 const esPath = path.join(__dirname, 'es');
-const umdPath = path.join(__dirname, 'umd');
+// const umdPath = path.join(__dirname, 'umd');
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -61,23 +61,38 @@ const esOutput = {
   globals,
 };
 
-const umdOutput = {
-  format: 'umd',
-  name: 'XunComponents',
-  globals,
-  assetFileNames: '[name].[ext]',
-};
+// const umdOutput = {
+//   format: 'umd',
+//   name: 'XunComponents',
+//   globals,
+//   assetFileNames: '[name].[ext]',
+// };
 
 export default (async () => {
   await fs.remove(distPath);
   await fs.remove(esPath);
-  await fs.remove(umdPath);
+  // await fs.remove(umdPath);
   const files = await fs.readdir(componentsPath);
 
   const components = await Promise.all(
     files.map(async (name) => {
       const comPath = path.join(componentsPath, name);
       const entry = path.join(comPath, 'index.tsx');
+
+      const stat = await fs.stat(comPath);
+      if (!stat.isDirectory()) return null;
+
+      const hasFile = await fs.pathExists(entry);
+      if (!hasFile) return null;
+
+      return { name, url: entry };
+    }),
+  );
+
+  const demos = await Promise.all(
+    files.map(async (name) => {
+      const comPath = path.join(componentsPath, name);
+      const entry = path.join(comPath, 'demo.tsx');
 
       const stat = await fs.stat(comPath);
       if (!stat.isDirectory()) return null;
@@ -98,6 +113,17 @@ export default (async () => {
         external,
         plugins,
       })),
+    ...demos
+      .filter((r) => r)
+      .map(({ name, url }) => ({
+        input: { [name]: url },
+        output: [
+          { ...cjsOutput, entryFileNames: '[name]/demo.exec.js' },
+          { ...esOutput, entryFileNames: '[name]/demo.exec.js' },
+        ],
+        external,
+        plugins,
+      })),
     {
       input: { index: path.join(componentsPath, 'index.tsx') },
       output: [
@@ -109,11 +135,11 @@ export default (async () => {
           ...esOutput,
           entryFileNames: 'index.js',
         },
-        {
-          ...umdOutput,
-          dir: 'umd',
-          entryFileNames: 'xunui.js',
-        },
+        // {
+        //   ...umdOutput,
+        //   dir: 'umd',
+        //   entryFileNames: 'xunui.js',
+        // },
       ],
       external,
       plugins,
