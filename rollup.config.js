@@ -43,7 +43,7 @@ const globals = {
   classnames: 'classNames',
 };
 
-const external = (id) => /^react|react-dom|classnames/.test(id);
+const external = (id) => /^react|react-dom|classnames|xun-icons/.test(id);
 
 const cjsOutput = {
   format: 'cjs',

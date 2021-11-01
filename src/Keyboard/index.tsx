@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from 'react';
 import classnames from 'classnames';
 import { Clear, Keyboard as KeyboardIcon } from 'xun-icons';

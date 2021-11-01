@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import { Close } from 'xun-icons';

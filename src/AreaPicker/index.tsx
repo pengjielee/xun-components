@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 import Popup from '../Popup';
@@ -16,7 +17,8 @@ interface IProps {
   text?: string;
   children?: React.ReactNode;
   className?: string;
-  onConfirm?: () => void;
+  onConfirm?: (val: any) => void;
+  onMaskClick?: () => void;
 }
 
 const getList = (id) => {

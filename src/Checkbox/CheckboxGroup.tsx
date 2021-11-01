@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from 'react';
 import classnames from 'classnames';
 import Radio from './Radio';

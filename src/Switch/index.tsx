@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState, useEffect } from 'react';
 import classnames from 'classnames';
 import './style.scss';

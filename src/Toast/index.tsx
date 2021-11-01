@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom';
 import InnerToast from './Toast';

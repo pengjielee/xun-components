@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState, useContext } from 'react';
 import { RadioGroupContext } from './Context';
 import classnames from 'classnames';

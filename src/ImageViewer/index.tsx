@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { useSprings, animated } from '@react-spring/web';

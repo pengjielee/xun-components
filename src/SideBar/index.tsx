@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { attachPropertiesToComponent } from '../assets/utils';
 import SideBar from './SideBar';
 import SideBarItem from './SideBarItem';

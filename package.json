@@ -1,6 +1,6 @@
 {
   "name": "xun-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "pengjielee",
   "scripts": {
     "dev": "dumi dev",
@@ -15,7 +15,7 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "newcomp": "node scripts/newcomp.js",
-    "build": "rollup -c && node scripts/copydoc.js"
+    "build": "rollup -c && node scripts/copy.js"
   },
   "main": "dist/index.js",
   "module": "es/index.js",

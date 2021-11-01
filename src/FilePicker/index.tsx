@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useRef } from 'react';
 import classnames from 'classnames';
 import { Add } from 'xun-icons';

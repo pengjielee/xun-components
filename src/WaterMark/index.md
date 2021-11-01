@@ -2,16 +2,7 @@
 
 使用:
 
-```tsx
-import React from 'react';
-import { WaterMark } from 'xun-components';
-
-const Demo = () => {
-  return <WaterMark></WaterMark>;
-};
-
-export default Demo;
-```
+<code src="./demo.tsx"></code>
 
 ## 参数
 
