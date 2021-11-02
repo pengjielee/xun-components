@@ -25,8 +25,8 @@ const init = async () => {
     fs.copySync(entry1, path.join(__dirname, `../dist/${name}/index.md`));
     fs.copySync(entry1, path.join(__dirname, `../es/${name}/index.md`));
 
-    fs.copySync(entry2, path.join(__dirname, `../dist/${name}/demo.js`));
-    fs.copySync(entry2, path.join(__dirname, `../es/${name}/demo.js`));
+    fs.copySync(entry2, path.join(__dirname, `../dist/${name}/demo.tsx`));
+    fs.copySync(entry2, path.join(__dirname, `../es/${name}/demo.tsx`));
   });
 };
 

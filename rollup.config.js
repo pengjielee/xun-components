@@ -118,8 +118,8 @@ export default (async () => {
       .map(({ name, url }) => ({
         input: { [name]: url },
         output: [
-          { ...cjsOutput, entryFileNames: '[name]/demo.exec.js' },
-          { ...esOutput, entryFileNames: '[name]/demo.exec.js' },
+          { ...cjsOutput, entryFileNames: '[name]/demo.js' },
+          { ...esOutput, entryFileNames: '[name]/demo.js' },
         ],
         external,
         plugins,
