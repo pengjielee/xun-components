@@ -3,14 +3,12 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  Link,
+  NavLink,
   Redirect,
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
-
 import { config } from '../../site.config.js';
-
-import Markdown from './markdown.js';
+import Markdown from '../components/markdown.js';
 
 const LoadableComponent = (component) => {
   return Loadable.Map({
@@ -35,8 +33,6 @@ const LoadableComponent = (component) => {
 };
 
 const Components = () => {
-  // const { general, form, feedback, view, navigation, other } = components;
-
   const components = [];
 
   Object.keys(config).forEach((key) => {
@@ -47,24 +43,28 @@ const Components = () => {
 
   return (
     <div className="page page-components">
-      <aside className="page-sidebar">
-        <dl>
+      <aside className="sidebar">
+        <div>
           {Object.keys(config).map((key) => {
             return (
-              <>
-                <dt>{config[key].name}</dt>
+              <div key={key} className="nav-group">
+                <div className="nav-title">{config[key].name}</div>
 
                 {config[key].childs.map((component, i) => (
-                  <dd key={i}>
-                    <Link to={`/components/${component.key}`}>
+                  <div className="nav-item" key={i}>
+                    <NavLink
+                      to={`/components/${component.key}`}
+                      className="nav-link"
+                      activeClassName="active"
+                    >
                       {component.name}
-                    </Link>
-                  </dd>
+                    </NavLink>
+                  </div>
                 ))}
-              </>
+              </div>
             );
           })}
-        </dl>
+        </div>
       </aside>
       <Switch>
         {components.map((component, i) => (

@@ -8,30 +8,14 @@ $body-color: #f7f8fa;
 
 body {
   background: $body-color;
-  padding: 20px;
 }
 
 ul li {
   list-style-type: none;
 }
 
-.icon-warning {
-  width: 15px;
-  margin-right: 5px;
-}
-
 .page-components {
   display: flex;
-  /*aside {
-    flex: 0 1 20%;
-    min-width: 300px;
-  }
-  .doc {
-    flex: 0 1 60%;
-  }
-  .preview {
-    flex: 0 1 20%;
-  }*/
 }
 
 .site-header {
@@ -40,17 +24,22 @@ ul li {
   user-select: none;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
   z-index: 100;
+  position: fixed;
+  top: 0;
   a {
     color: #fff;
     margin-left: 20px;
   }
 }
 
-.page-sidebar {
+.site-main {
+  margin: 20px;
+}
+
+.sidebar {
   position: fixed;
-  top: 100px;
+  top: 80px;
   bottom: 0;
   z-index: 1;
   min-width: 220px;
@@ -59,46 +48,65 @@ ul li {
   overflow-y: scroll;
   background-color: #fff;
   border-radius: 10px;
-  dt {
-    font-size: 14px;
-    color: #666;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
   }
-  a {
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 6px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(69, 90, 100, 0.2);
+  }
+  .nav-title {
+    padding: 8px 0 8px 24px;
+    color: #455a64;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 28px;
+  }
+  .nav-group {
+    margin-bottom: 16px;
+    padding-left: 6px;
+  }
+  .nav-link {
     display: block;
     margin: 8px 0;
     padding: 8px 0 8px 24px;
     color: #455a64;
     font-size: 13px;
     line-height: 20px;
-    transition: color 0.2s;
+    &.active {
+      font-weight: 600;
+      background-color: #ebfff0;
+      border-radius: 999px;
+      color: #4fc08d;
+    }
   }
 }
 
-.page-sidebar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: transparent;
+.main {
+  display: flex;
+  margin-top: 60px;
 }
 
-.page-sidebar::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 6px;
-}
-
-.page-sidebar:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(69, 90, 100, 0.2);
-}
-
-.page-doc {
+.doc {
   box-sizing: border-box;
+
   padding: 20px;
   min-width: 800px;
-  margin: 0 30px 30px 240px;
+  max-width: 900px;
+  margin: 0px 10px 30px 240px;
   overflow: hidden;
   background: #fff;
   border-radius: 10px;
+  line-height: 30px;
 
-  pre {
+  /*pre {
     padding: 0px;
     border-radius: 10px;
     code {
@@ -110,21 +118,19 @@ ul li {
       font-weight: 400;
       font-size: 14px;
       font-family: 'Source Code Pro', 'Monaco', 'Inconsolata', monospace;
-      line-height: 24px;
+      line-height: 20px;
       white-space: pre-wrap;
       word-wrap: break-word;
       -webkit-font-smoothing: auto;
       background-color: #f8f8f8;
       border-radius: 20px;
     }
-  }
+  }*/
 }
 
-.page-simulator {
-  position: fixed;
-  top: 100px;
-  right: 50%;
-  margin-right: -600px;
-  /*width: 360px;
-    min-width: 360px;*/
+.simulator {
+  /* position: fixed;
+  top: 80px;
+  right: 50%;*/
+  /*margin-right: -600px;*/
 }

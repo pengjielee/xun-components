@@ -6,6 +6,7 @@ import Components from './pages/components';
 
 import '../assets/styles/base.scss';
 import '../assets/styles/iphone.scss';
+import '../assets/styles/markdown.scss';
 import 'xun-components/dist/index.css';
 
 const App = () => {

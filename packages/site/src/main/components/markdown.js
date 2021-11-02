@@ -1,13 +1,14 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 import marked from 'marked';
+import Prism from 'prismjs';
 
 const Markdown = (props) => {
   const { code, content, component } = props;
 
   const result = content.replace(
     '<code src="./demo.tsx"></code>',
-    `~~~${code}~~~`,
+    `~~~javascript ${code}~~~`,
   );
 
   // const LoadableComponent = Loadable({
@@ -19,14 +20,32 @@ const Markdown = (props) => {
 
   // const preview = <div className="preview"><LoadableComponent /></div>;
 
-  const html = marked(result, {
-    renderer: new marked.Renderer(),
-  });
+  // const html = marked(result, {
+  //   renderer: new marked.Renderer(),
+  // });
+  //
+
+  const renderer = {
+    table: (header, body) => {
+      return `<div class="grid-container"><table class="grid"><thead>${header}</thead><tbody>${body}</tbody></table></div>`;
+    },
+
+    heading: (text, level) => {
+      if (level === 1) return '';
+      return `<h${level}>${text}</h${level}>`;
+    },
+  };
+  marked.use({ renderer });
+
+  const html = marked(result);
 
   return (
-    <>
-      <div className="page-doc" dangerouslySetInnerHTML={{ __html: html }} />
-      <div className="page-simulator">
+    <div className="main">
+      <div
+        className="doc markdown"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+      <div className="simulator">
         <div className="marvel-device iphone8 silver">
           <div className="top-bar"></div>
           <div className="sleep"></div>
@@ -43,7 +62,7 @@ const Markdown = (props) => {
           <div className="bottom-bar"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
