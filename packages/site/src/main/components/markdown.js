@@ -1,7 +1,12 @@
 import React, { useRef } from 'react';
 import Loadable from 'react-loadable';
 import marked from 'marked';
-import Prism from 'prismjs';
+
+let prefix = '/';
+
+if(process.env.NODE_ENV === 'production') {
+  prefix = 'xun-components/'
+}
 
 const Markdown = (props) => {
   const frameRef = useRef(null);
@@ -41,7 +46,7 @@ const Markdown = (props) => {
   const html = marked(result);
 
   const handleClick = () => {
-    frameRef.current.src = `${window.location.protocol}//${window.location.host}/demo.html#/`;
+    frameRef.current.src = `${window.location.protocol}//${window.location.host}/${prefix}demo.html#/`;
   };
 
   return (
@@ -61,7 +66,7 @@ const Markdown = (props) => {
           <div className="screen">
             <iframe
               ref={frameRef}
-              src={`${window.location.protocol}//${window.location.host}/demo.html#${component.key}`}
+              src={`${window.location.protocol}//${window.location.host}/${prefix}demo.html#${component.key}`}
             ></iframe>
           </div>
           <div className="home" onClick={handleClick}></div>
