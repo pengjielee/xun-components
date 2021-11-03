@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[771],{771:(e,s,n)=>{n.r(s),n.d(s,{default:()=>c});const c='## Dialog\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

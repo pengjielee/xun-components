@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[1128],{1128:(e,n,s)=>{s.r(n),s.d(n,{default:()=>c});const c='## Keyboard\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

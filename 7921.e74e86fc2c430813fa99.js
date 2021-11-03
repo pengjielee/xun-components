@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[7921],{7921:(e,n,s)=>{s.r(n),s.d(n,{default:()=>c});const c='## SideBar\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

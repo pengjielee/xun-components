@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[7864],{7864:(e,s,c)=>{c.r(s),c.d(s,{default:()=>n});const n='## FilePicker\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

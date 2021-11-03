@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[5221],{5221:(e,s,n)=>{n.r(s),n.d(s,{default:()=>t});const t='## Button\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

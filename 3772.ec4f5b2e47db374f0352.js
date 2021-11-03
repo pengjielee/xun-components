@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[3772],{3772:(e,s,n)=>{n.r(s),n.d(s,{default:()=>c});const c='## ImageViewer\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

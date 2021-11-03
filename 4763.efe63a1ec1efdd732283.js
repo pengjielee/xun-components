@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[4763],{4763:(e,n,s)=>{s.r(n),s.d(n,{default:()=>t});const t='## Stepper\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

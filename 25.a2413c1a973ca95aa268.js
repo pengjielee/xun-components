@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[25],{25:(e,s,c)=>{c.r(s),c.d(s,{default:()=>n});const n='## Checkbox\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[6044],{6044:(e,s,n)=>{n.r(s),n.d(s,{default:()=>c});const c='## Collapse\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

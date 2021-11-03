@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[6987],{6987:(n,e,s)=>{s.r(e),s.d(e,{default:()=>c});const c='## NavBar\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);
