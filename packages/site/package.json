@@ -17,7 +17,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "dayjs": "^1.10.7",
     "marked": "^3.0.8",
