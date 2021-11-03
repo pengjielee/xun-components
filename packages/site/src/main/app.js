@@ -15,9 +15,8 @@ const App = () => {
       <Router>
         <header className="site-header">
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/components">Components</Link>
+            <Link to="/components">组件</Link>
+            <Link to="/about">关于</Link>
           </nav>
         </header>
 

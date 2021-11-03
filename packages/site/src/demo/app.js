@@ -11,7 +11,7 @@ const LoadableComponent = (component) => {
   return Loadable({
     loader: component.demo,
     loading() {
-      return <div>Loading</div>;
+      return <div className="loading">Loading</div>;
     },
   });
 };
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Router>
       <div className="demo-app'">
-        <div className="demo-nav">
+        <div className="demo-nav hidden">
           <Link to="/">首页</Link>
         </div>
 

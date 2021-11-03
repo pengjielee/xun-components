@@ -116,7 +116,6 @@ module.exports = {
       template: "./src/main/template.html",
       minify: false,
       inject: "body",
-      cdnjs: cdnjs,
       chunks: ['main'],
     }),
      new HtmlWebpackPlugin({
@@ -125,7 +124,6 @@ module.exports = {
       template: "./src/demo/template.html",
       minify: false,
       inject: "body",
-      cdnjs: cdnjs,
       chunks: ['demo'],
     }),
     new MiniCssExtractPlugin({

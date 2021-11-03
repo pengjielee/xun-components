@@ -2,6 +2,22 @@
   background: red;
 }
 
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  background: #000000;
+  opacity: 0.8;
+  color: #ffffff;
+  text-align: center;
+}
+
 .demo-nav {
   display: flex;
   align-items: center;
@@ -12,6 +28,10 @@
     font-size: 16px;
   }
 }
+.hidden {
+  display: none;
+}
+
 .demo-home {
   box-sizing: border-box;
   width: 100%;

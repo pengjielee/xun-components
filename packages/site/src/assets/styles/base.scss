@@ -132,7 +132,29 @@ ul li {
   top: 80px;
   right: 50%;
   margin-right: -600px;*/
+  position: relative;
   .home {
     cursor: pointer;
+  }
+  .control {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #00bc71;
+    svg {
+      fill: #666;
+    }
+  }
+  &.fixed {
+    position: fixed;
+    top: 80px;
+    right: 50%;
+    margin-right: -540px;
+    .control svg {
+      fill: red;
+    }
   }
 }
