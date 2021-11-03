@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "scripts": {
-    "deploy:site": "lerna exec --scope site -- npm run deploy"
+    "deploy:site": "lerna exec --scope site -- npm run deploy",
+    "clean": "lerna clean",
+    "init": "lerna bootstrap"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
