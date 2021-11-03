@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[8753],{8753:(n,e,s)=>{s.r(e),s.d(e,{default:()=>t});const t='## Empty\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

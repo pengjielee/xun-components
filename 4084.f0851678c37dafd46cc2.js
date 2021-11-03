@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[4084],{4084:(n,e,s)=>{s.r(e),s.d(e,{default:()=>c});const c='## Radio\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

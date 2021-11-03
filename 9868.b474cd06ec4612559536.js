@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[9868],{9868:(e,n,s)=>{s.r(n),s.d(n,{default:()=>c});const c='## Divider\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

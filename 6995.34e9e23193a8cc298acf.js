@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[6995],{6995:(n,e,s)=>{s.r(e),s.d(e,{default:()=>c});const c='## Card\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);

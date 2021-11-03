@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxun_components_site=self.webpackChunkxun_components_site||[]).push([[5081],{5081:(e,t,n)=>{Object.defineProperty(t,"__esModule",{value:!0});var u=n(7363),a=n(8257),l=function(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}(u);t.default=function(){return l.default.createElement(a.WaterMark,null)}}}]);
