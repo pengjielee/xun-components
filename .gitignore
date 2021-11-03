@@ -6,6 +6,8 @@
 /yarn-error.log
 /yarn.lock
 /package-lock.json
+/packages/components/node_modules
+/packages/site/node_modules
 
 # production
 /dist
