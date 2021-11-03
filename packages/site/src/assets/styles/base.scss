@@ -34,7 +34,7 @@ ul li {
 }
 
 .site-main {
-  margin: 20px;
+  margin: 80px 20px;
 }
 
 .sidebar {
@@ -91,7 +91,6 @@ ul li {
 
 .main {
   display: flex;
-  margin-top: 60px;
 }
 
 .doc {
@@ -131,6 +130,9 @@ ul li {
 .simulator {
   /* position: fixed;
   top: 80px;
-  right: 50%;*/
-  /*margin-right: -600px;*/
+  right: 50%;
+  margin-right: -600px;*/
+  .home {
+    cursor: pointer;
+  }
 }

@@ -55,7 +55,7 @@ const Components = () => {
                     <NavLink
                       to={`/components/${component.key}`}
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                       {component.name}
                     </NavLink>

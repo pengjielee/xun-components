@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Loadable from 'react-loadable';
 import marked from 'marked';
 import Prism from 'prismjs';
 
 const Markdown = (props) => {
+  const frameRef = useRef(null);
   const { code, content, component } = props;
 
   const result = content.replace(
@@ -39,6 +40,10 @@ const Markdown = (props) => {
 
   const html = marked(result);
 
+  const handleClick = () => {
+    frameRef.current.src = `${window.location.protocol}//${window.location.host}/demo.html#/`;
+  };
+
   return (
     <div className="main">
       <div
@@ -55,10 +60,11 @@ const Markdown = (props) => {
           <div className="speaker"></div>
           <div className="screen">
             <iframe
+              ref={frameRef}
               src={`${window.location.protocol}//${window.location.host}/demo.html#${component.key}`}
             ></iframe>
           </div>
-          <div className="home"></div>
+          <div className="home" onClick={handleClick}></div>
           <div className="bottom-bar"></div>
         </div>
       </div>

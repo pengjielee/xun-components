@@ -3,10 +3,9 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { config } from '../site.config.js';
 import 'xun-components/dist/index.css';
+import Home from './pages/home';
 
-const Home = () => {
-  return <div>DEMO Home Page</div>;
-};
+import '../assets/styles/demo.scss';
 
 const LoadableComponent = (component) => {
   return Loadable({
@@ -26,9 +25,14 @@ const App = () => {
     });
   });
   return (
-    <div className="demo-app'">
-      <Router>
+    <Router>
+      <div className="demo-app'">
+        <div className="demo-nav">
+          <Link to="/">首页</Link>
+        </div>
+
         <Switch>
+          <Route path={`/`} component={Home} exact />
           {components.map((component, i) => (
             <Route
               key={+i}
@@ -37,8 +41,8 @@ const App = () => {
             />
           ))}
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };
 
