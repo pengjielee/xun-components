@@ -4,7 +4,8 @@ import marked from 'marked';
 
 let prefix = '/';
 
-if(process.env.NODE_ENV === 'production') {
+//生产环境并且是github pages添加前缀
+if(process.env.NODE_ENV === 'production' && window.location.href.indexOf('github') >= 0) {
   prefix = 'xun-components/'
 }
 
