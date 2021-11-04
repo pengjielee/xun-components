@@ -4,6 +4,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import Components from './pages/components';
 
+import 'normalize.css';
 import '../assets/styles/base.scss';
 import '../assets/styles/iphone.scss';
 import '../assets/styles/markdown.scss';

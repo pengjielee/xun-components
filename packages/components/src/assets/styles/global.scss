@@ -19,6 +19,10 @@ a {
   outline: none;
 }
 
+input, textarea {
+  -webkit-appearance: none;
+}
+
 .arrow-right {
   &:after {
     display: inline-block;

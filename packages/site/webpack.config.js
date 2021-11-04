@@ -38,7 +38,7 @@ const cdnjs = [
 
 module.exports = {
   entry: {
-    main: "./src/desktop/index.js",
+    main: "./src/main/index.js",
     demo: "./src/demo/index.js"
   },
 

@@ -5,6 +5,7 @@ import { config } from '../site.config.js';
 import 'xun-components/dist/index.css';
 import Home from './pages/home';
 
+import 'normalize.css';
 import '../assets/styles/demo.scss';
 
 const LoadableComponent = (component) => {
@@ -26,10 +27,7 @@ const App = () => {
   });
   return (
     <Router>
-      <div className="demo-app'">
-        <div className="demo-nav hidden">
-          <Link to="/">首页</Link>
-        </div>
+      <div className="demo-app">
 
         <Switch>
           <Route path={`/`} component={Home} exact />
@@ -37,6 +35,14 @@ const App = () => {
             <Route
               key={+i}
               path={`/${component.key}`}
+              component={LoadableComponent(component)}
+            />
+          ))}
+          <Route path={`/components/`} component={Home} exact />
+          {components.map((component, i) => (
+            <Route
+              key={+i}
+              path={`/components/${component.key}`}
               component={LoadableComponent(component)}
             />
           ))}
