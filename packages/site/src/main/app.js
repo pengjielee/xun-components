@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './pages/home';
+import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import About from './pages/about';
 import Components from './pages/components';
 
@@ -29,9 +28,7 @@ const App = () => {
             <Route path="/components">
               <Components />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Redirect to="/components/Button" />
           </Switch>
         </main>
       </Router>

@@ -14,7 +14,12 @@ if (
 
 const Markdown = (props) => {
   const frameRef = useRef(null);
-  const [fixed, setFixed] = useState(false);
+
+  let defaultFixed = window.localStorage.getItem('fixed') || 'false';
+
+  defaultFixed = JSON.parse(defaultFixed);
+
+  const [fixed, setFixed] = useState(defaultFixed);
   const { code, content, component } = props;
 
   const result = content.replace(
@@ -55,8 +60,9 @@ const Markdown = (props) => {
   };
 
   const handleFix = () => {
-    console.log('fix');
-    setFixed(!fixed);
+    const value = !fixed;
+    window.localStorage.setItem('fixed', value);
+    setFixed(value);
   };
 
   return (

@@ -100,6 +100,7 @@ html, body {
   background: #fff;
   border-radius: 10px;
   line-height: 30px;
+  height: 100%;
 
   /*pre {
     padding: 0px;
@@ -143,8 +144,9 @@ html, body {
   &.fixed {
     position: fixed;
     top: 80px;
-    right: 50%;
-    margin-right: -540px;
+    right: 10%;
+    /*right: 50%;
+    margin-right: -540px;*/
     .control svg {
       fill: red;
     }
