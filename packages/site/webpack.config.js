@@ -38,7 +38,7 @@ const cdnjs = [
 
 module.exports = {
   entry: {
-    main: "./src/main/index.js",
+    main: "./src/desktop/index.js",
     demo: "./src/demo/index.js"
   },
 
@@ -113,7 +113,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: "xun-components",
-      template: "./src/main/template.html",
+      template: "./src/template.html",
       minify: false,
       inject: "body",
       cdnjs: cdnjs,
@@ -122,7 +122,7 @@ module.exports = {
      new HtmlWebpackPlugin({
       filename: 'demo.html',
       title: "xun-components",
-      template: "./src/demo/template.html",
+      template: "./src/template.html",
       minify: false,
       inject: "body",
       cdnjs: cdnjs,

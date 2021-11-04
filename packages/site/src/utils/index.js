@@ -1,0 +1,1 @@
+export const isMobile = () => !!window.navigator.userAgent.match(/AppleWebKit.*Mobile.*/);
