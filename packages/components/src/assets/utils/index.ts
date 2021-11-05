@@ -1,3 +1,5 @@
+export type ContainerType = HTMLElement | (() => HTMLElement) | Window;
+
 export function attachPropertiesToComponent<C, P extends Record<string, any>>(
   component: C,
   properties: P,
@@ -149,3 +151,30 @@ export function rubberbandIfOutOfBounds(
     return +rubberband(position - max, dimension, constant) + max;
   return position;
 }
+
+export const isBrowser = ![typeof window, typeof document].includes(
+  'undefined',
+);
+
+export const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
+
+export const getMountContainer = (
+  mountContainer?: ContainerType,
+): HTMLElement => {
+  if (mountContainer) {
+    if (typeof mountContainer === 'function') {
+      return mountContainer();
+    }
+    if (
+      typeof mountContainer === 'object' &&
+      mountContainer instanceof HTMLElement
+    ) {
+      return mountContainer;
+    }
+  }
+  return document.body;
+};

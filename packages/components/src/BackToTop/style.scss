@@ -1,7 +1,8 @@
 .xun-back-to-top {
   position: fixed;
-  right: 10px;
-  bottom: 10px;
+  z-index: var(--zindex-backtotop);
+  right: 20px;
+  bottom: 20px;
   cursor: pointer;
   width: 50px;
   height: 50px;
