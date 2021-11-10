@@ -6,6 +6,7 @@ import 'xun-components/dist/index.css';
 import Home from './pages/home';
 
 import 'normalize.css';
+import '../assets/styles/base.scss';
 import '../assets/styles/demo.scss';
 
 const LoadableComponent = (component) => {
