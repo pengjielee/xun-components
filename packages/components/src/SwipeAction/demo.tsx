@@ -22,15 +22,17 @@ const Demo = () => {
         <h3 className="demo-page-title">左滑</h3>
       </header>
       <main>
-        <List>
-          {numbers.map((number) => {
-            return (
-              <SwipeAction actions={actions} key={number}>
-                <List.Item>左滑试试 {number}</List.Item>
-              </SwipeAction>
-            );
-          })}
-        </List>
+        <div className="demo-block white">
+          <List>
+            {numbers.map((number) => {
+              return (
+                <SwipeAction actions={actions} key={number}>
+                  <List.Item>左滑试试 {number}</List.Item>
+                </SwipeAction>
+              );
+            })}
+          </List>
+        </div>
       </main>
     </div>
   );

@@ -14,7 +14,7 @@ const Demo = () => {
   const [list, setList] = useState(createList());
 
   return (
-    <>
+    <div className="demo-page-pull">
       <PullToRefresh
         onRefresh={async () => {
           await sleep(3000);
@@ -26,7 +26,7 @@ const Demo = () => {
           return <Cell key={item}>第 {item} 行</Cell>;
         })}
       </PullToRefresh>
-    </>
+    </div>
   );
 };
 

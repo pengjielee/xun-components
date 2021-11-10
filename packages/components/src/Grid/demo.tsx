@@ -11,53 +11,58 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">一列，间距为5</div>
-          <Grid gap={5}>
-            <Grid.Item>1</Grid.Item>
-            <Grid.Item>2</Grid.Item>
-            <Grid.Item>3</Grid.Item>
-            <Grid.Item>4</Grid.Item>
-            <Grid.Item>5</Grid.Item>
-            <Grid.Item>6</Grid.Item>
-          </Grid>
+          <div className="demo-body white">
+            <Grid gap={5}>
+              <Grid.Item>1</Grid.Item>
+              <Grid.Item>2</Grid.Item>
+              <Grid.Item>3</Grid.Item>
+              <Grid.Item>4</Grid.Item>
+              <Grid.Item>5</Grid.Item>
+              <Grid.Item>6</Grid.Item>
+            </Grid>
+          </div>
         </div>
 
         <div className="demo-block">
           <div className="demo-title">两列，间距为10</div>
-
-          <Grid columns={2} gap={10}>
-            <Grid.Item>1</Grid.Item>
-            <Grid.Item>2</Grid.Item>
-            <Grid.Item>3</Grid.Item>
-            <Grid.Item>4</Grid.Item>
-            <Grid.Item>5</Grid.Item>
-            <Grid.Item>6</Grid.Item>
-          </Grid>
+          <div className="demo-body white">
+            <Grid columns={2} gap={10}>
+              <Grid.Item>1</Grid.Item>
+              <Grid.Item>2</Grid.Item>
+              <Grid.Item>3</Grid.Item>
+              <Grid.Item>4</Grid.Item>
+              <Grid.Item>5</Grid.Item>
+              <Grid.Item>6</Grid.Item>
+            </Grid>
+          </div>
         </div>
 
         <div className="demo-block">
           <div className="demo-title">两列，行间距为5，列间距为10</div>
-
-          <Grid columns={2} gap={[5, 20]}>
-            <Grid.Item>1</Grid.Item>
-            <Grid.Item>2</Grid.Item>
-            <Grid.Item>3</Grid.Item>
-            <Grid.Item>4</Grid.Item>
-            <Grid.Item>5</Grid.Item>
-            <Grid.Item>6</Grid.Item>
-          </Grid>
+          <div className="demo-body white">
+            <Grid columns={2} gap={[5, 20]}>
+              <Grid.Item>1</Grid.Item>
+              <Grid.Item>2</Grid.Item>
+              <Grid.Item>3</Grid.Item>
+              <Grid.Item>4</Grid.Item>
+              <Grid.Item>5</Grid.Item>
+              <Grid.Item>6</Grid.Item>
+            </Grid>
+          </div>
         </div>
 
         <div className="demo-block">
           <div className="demo-title">两列</div>
-
-          <Grid columns={3} gap={['2px', '15px']}>
-            <Grid.Item>1</Grid.Item>
-            <Grid.Item>2</Grid.Item>
-            <Grid.Item>3</Grid.Item>
-            <Grid.Item span={2}>4，跨2列</Grid.Item>
-            <Grid.Item>5</Grid.Item>
-            <Grid.Item>6</Grid.Item>
-          </Grid>
+          <div className="demo-body white">
+            <Grid columns={3} gap={['2px', '15px']}>
+              <Grid.Item>1</Grid.Item>
+              <Grid.Item>2</Grid.Item>
+              <Grid.Item>3</Grid.Item>
+              <Grid.Item span={2}>4，跨2列</Grid.Item>
+              <Grid.Item>5</Grid.Item>
+              <Grid.Item>6</Grid.Item>
+            </Grid>
+          </div>
         </div>
       </main>
     </div>

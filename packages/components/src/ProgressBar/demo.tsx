@@ -1,32 +1,58 @@
 import React, { useState } from 'react';
-import { PullToRefresh, Cell } from 'xun-components';
-import { sleep } from '../assets/utils';
+import { ProgressBar, Button } from 'xun-components';
 
 const Demo = () => {
-  const createList = () => {
-    const list = [];
-    for (let i = 0; i < 100; i++) {
-      list.push(Date.now() + i);
+  const [percent, setPercent] = useState(10);
+
+  const handleAdd = () => {
+    if (percent >= 100) {
+      return;
     }
-    return list;
+    setPercent(percent + 10);
   };
 
-  const [list, setList] = useState(createList());
+  const handleMinus = () => {
+    if (percent <= 0) {
+      return;
+    }
+    setPercent(percent - 10);
+  };
 
   return (
-    <>
-      <PullToRefresh
-        onRefresh={async () => {
-          await sleep(3000);
-          setList(createList());
-        }}
-        completeDelay={100}
-      >
-        {list.map((item) => {
-          return <Cell key={item}>第 {item} 行</Cell>;
-        })}
-      </PullToRefresh>
-    </>
+    <div className="demo-page">
+      <header>
+        <h3 className="demo-page-title">进度条</h3>
+      </header>
+      <main>
+        <div className="demo-block">
+          <div className="demo-title">基本</div>
+          <div className="demo-body white">
+            <ProgressBar percent={percent}></ProgressBar>
+          </div>
+        </div>
+        <div className="demo-block">
+          <div className="demo-title">设置线条宽度</div>
+          <div className="demo-body white">
+            <ProgressBar percent={percent} strokeWidth="6"></ProgressBar>
+          </div>
+        </div>
+        <div className="demo-block">
+          <div className="demo-title">设置线条颜色</div>
+          <div className="demo-body white">
+            <ProgressBar
+              percent={percent}
+              strokeWidth="8"
+              strokeColor="red"
+            ></ProgressBar>
+          </div>
+        </div>
+
+        <Button type="primary" onClick={handleAdd}>
+          增加
+        </Button>
+        <Button onClick={handleMinus}>减少</Button>
+      </main>
+    </div>
   );
 };
 

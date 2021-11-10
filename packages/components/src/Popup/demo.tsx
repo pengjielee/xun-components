@@ -15,47 +15,49 @@ const Demo = () => {
         <h3 className="demo-page-title">弹出层</h3>
       </header>
       <main>
-        <Cell
-          title="顶部弹出"
-          description={
-            <Button size="small" onClick={() => setVisible1(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="底部弹出"
-          description={
-            <Button size="small" onClick={() => setVisible2(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="左侧弹出"
-          description={
-            <Button size="small" onClick={() => setVisible3(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="右侧弹出"
-          description={
-            <Button size="small" onClick={() => setVisible4(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+        <div className="demo-block white">
+          <Cell
+            title="顶部弹出"
+            description={
+              <Button size="small" onClick={() => setVisible1(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="底部弹出"
+            description={
+              <Button size="small" onClick={() => setVisible2(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="左侧弹出"
+            description={
+              <Button size="small" onClick={() => setVisible3(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="右侧弹出"
+            description={
+              <Button size="small" onClick={() => setVisible4(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
 
-        <Cell
-          title="设定container"
-          description={
-            <Button size="small" onClick={() => setVisible4(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+          <Cell
+            title="设定container"
+            description={
+              <Button size="small" onClick={() => setVisible4(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+        </div>
 
         <div id="container"></div>
 

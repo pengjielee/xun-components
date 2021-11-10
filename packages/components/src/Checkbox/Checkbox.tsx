@@ -71,9 +71,11 @@ const Checkbox: FC<IProps> = (props) => {
         disabled={disabled}
         id={id}
       />
-      <div className={`${classPrefix}__icon`}>
-        {checked ? <CheckedSquare /> : <UncheckedSquare />}
-      </div>
+      {checked ? (
+        <CheckedSquare fill="red" size="24" />
+      ) : (
+        <UncheckedSquare fill="#ddd" size="24" />
+      )}
       {children && <div className={`${classPrefix}__content`}>{children}</div>}
     </label>
   );

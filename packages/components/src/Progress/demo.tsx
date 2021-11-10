@@ -26,19 +26,25 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">基本</div>
-          <Progress percent={percent}></Progress>
+          <div className="demo-body white">
+            <Progress percent={percent}></Progress>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">设置线条宽度</div>
-          <Progress percent={percent} strokeWidth="2"></Progress>
+          <div className="demo-body white">
+            <Progress percent={percent} strokeWidth="2"></Progress>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">设置线条颜色</div>
-          <Progress
-            percent={percent}
-            strokeWidth="2"
-            strokeColor="red"
-          ></Progress>
+          <div className="demo-body white">
+            <Progress
+              percent={percent}
+              strokeWidth="2"
+              strokeColor="red"
+            ></Progress>
+          </div>
         </div>
 
         <Button type="primary" onClick={handleAdd}>

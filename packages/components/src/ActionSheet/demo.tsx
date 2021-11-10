@@ -34,32 +34,34 @@ const Demo = () => {
         <h3 className="demo-page-title">动作面板</h3>
       </header>
       <main>
-        <Cell
-          title="基本"
-          description={
-            <Button size="small" onClick={() => setVisible1(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+        <div className="demo-block white">
+          <Cell
+            title="基本"
+            description={
+              <Button size="small" onClick={() => setVisible1(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
 
-        <Cell
-          title="取消按钮"
-          description={
-            <Button size="small" onClick={() => setVisible2(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+          <Cell
+            title="取消按钮"
+            description={
+              <Button size="small" onClick={() => setVisible2(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
 
-        <Cell
-          title="取消按钮和标题"
-          description={
-            <Button size="small" onClick={() => setVisible3(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+          <Cell
+            title="取消按钮和标题"
+            description={
+              <Button size="small" onClick={() => setVisible3(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+        </div>
 
         <ActionSheet
           actions={actions}

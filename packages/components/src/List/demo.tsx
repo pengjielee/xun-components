@@ -54,29 +54,46 @@ const Demo = () => {
   };
 
   return (
-    <div style={{ margin: '0 10px' }}>
-      <List>
-        <List.Item>1</List.Item>
-        <List.Item>2</List.Item>
-        <List.Item clickable onClick={() => alert('click')}>
-          3
-        </List.Item>
-      </List>
+    <div className="demo-page">
+      <header>
+        <h3 className="demo-page-title">列表</h3>
+      </header>
+      <div className="demo-block">
+        <div className="demo-title">基本</div>
+        <div className="demo-body white">
+          <List>
+            <List.Item>1</List.Item>
+            <List.Item>2</List.Item>
+            <List.Item clickable onClick={() => alert('click')}>
+              3
+            </List.Item>
+          </List>
+        </div>
+      </div>
 
-      <List>
-        <List.Item title="标题1">1</List.Item>
-        <List.Item
-          title="标题2"
-          icon={<img alt="" src={img} style={{ width: 30, height: 30 }} />}
-        >
-          2
-        </List.Item>
-        <List.Item clickable onClick={() => alert('click')}>
-          3
-        </List.Item>
-      </List>
-
-      <List>{renderUsers()}</List>
+      <div className="demo-block">
+        <div className="demo-title">标题/图标/内容</div>
+        <div className="demo-body white">
+          <List>
+            <List.Item title="标题1">1</List.Item>
+            <List.Item
+              title="标题2"
+              icon={<img alt="" src={img} style={{ width: 30, height: 30 }} />}
+            >
+              2
+            </List.Item>
+            <List.Item clickable onClick={() => alert('click')}>
+              3
+            </List.Item>
+          </List>
+        </div>
+      </div>
+      <div className="demo-block">
+        <div className="demo-title">用户列表</div>
+        <div className="demo-body white">
+          <List>{renderUsers()}</List>
+        </div>
+      </div>
     </div>
   );
 };

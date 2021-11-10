@@ -27,17 +27,19 @@ const Demo = () => {
         <h3 className="demo-page-title">返回顶部</h3>
       </header>
       <main>
-        <Cell
-          title={
-            windowScroll ? '当前使用window作为容器' : '当前使用div作为容器'
-          }
-          description={
-            <Switch checked={windowScroll} onChange={handleChange}></Switch>
-          }
-        />
+        <div className="demo-block white">
+          <Cell
+            title={
+              windowScroll ? '当前使用window作为容器' : '当前使用div作为容器'
+            }
+            description={
+              <Switch checked={windowScroll} onChange={handleChange}></Switch>
+            }
+          />
 
-        <div ref={containerRef} style={containerStyle}>
-          {list}
+          <div ref={containerRef} style={containerStyle}>
+            {list}
+          </div>
         </div>
         <BackToTop scrollContainer={scrollContainer}></BackToTop>
       </main>

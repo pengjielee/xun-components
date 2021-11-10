@@ -9,19 +9,27 @@ const Demo = () => (
     <main>
       <div className="demo-block">
         <div className="demo-title">默认</div>
-        <Divider></Divider>
+        <div className="demo-body white">
+          <Divider></Divider>
+        </div>
       </div>
       <div className="demo-block">
         <div className="demo-title">居中</div>
-        <Divider>我是内容</Divider>
+        <div className="demo-body white">
+          <Divider>我是内容</Divider>
+        </div>
       </div>
       <div className="demo-block">
         <div className="demo-title">靠左</div>
-        <Divider position="left">我是内容</Divider>
+        <div className="demo-body white">
+          <Divider position="left">我是内容</Divider>
+        </div>
       </div>
       <div className="demo-block">
         <div className="demo-title">靠右</div>
-        <Divider position="right">我是内容</Divider>
+        <div className="demo-body white">
+          <Divider position="right">我是内容</Divider>
+        </div>
       </div>
     </main>
   </div>

@@ -2,18 +2,28 @@ import React from 'react';
 import { Empty } from 'xun-components';
 
 const Demo = () => (
-  <div className="demo-page demo-page-button">
+  <div className="demo-page demo-page-empty">
     <header>
-      <h3 className="demo-page-title">无数据</h3>
+      <h3 className="demo-page-title">空状态</h3>
     </header>
     <main>
-      <Empty></Empty>
-      <Empty description="暂无数据" descStyle={{ fontSize: '10px' }}></Empty>
-      <Empty
-        description="暂无数据"
-        descStyle={{ fontSize: '10px', color: 'red' }}
-      ></Empty>
-      <Empty description="暂无数据" imageStyle={{ width: '120px' }}></Empty>
+      <div className="demo-block white">
+        <Empty></Empty>
+      </div>
+      <div className="demo-block white">
+        <Empty description="暂无数据" descStyle={{ fontSize: '10px' }}></Empty>
+      </div>
+
+      <div className="demo-block white">
+        {' '}
+        <Empty
+          description="暂无数据"
+          descStyle={{ fontSize: '10px', color: 'red' }}
+        ></Empty>
+      </div>
+      <div className="demo-block white">
+        <Empty description="暂无数据" imageStyle={{ width: '120px' }}></Empty>
+      </div>
     </main>
   </div>
 );

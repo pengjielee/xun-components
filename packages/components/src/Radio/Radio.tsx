@@ -70,9 +70,11 @@ const Radio: FC<IProps> = (props) => {
         disabled={disabled}
         id={id}
       />
-      <div className={`${classPrefix}__icon`}>
-        {checked ? <Checked /> : <Unchecked />}
-      </div>
+      {checked ? (
+        <Checked fill="red" size="20" />
+      ) : (
+        <Unchecked fill="#ddd" size="20" />
+      )}
       {children && <div className={`${classPrefix}__content`}>{children}</div>}
     </label>
   );

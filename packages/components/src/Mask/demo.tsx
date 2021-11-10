@@ -9,14 +9,16 @@ const Demo = () => {
         <h3 className="demo-page-title">遮罩层</h3>
       </header>
       <main>
-        <Cell
-          title="显示遮罩层"
-          description={
-            <Button size="small" onClick={() => setVisible(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+        <div className="demo-block white">
+          <Cell
+            title="显示遮罩层"
+            description={
+              <Button size="small" onClick={() => setVisible(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+        </div>
 
         <Mask visible={visible} onClick={() => setVisible(false)}></Mask>
       </main>

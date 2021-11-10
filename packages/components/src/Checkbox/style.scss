@@ -2,22 +2,20 @@
 
 .xun-checkbox {
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   font-size: 14px;
   input {
     display: none;
   }
-  &__icon {
-    &-checked {
-      width: 100%;
-    }
-    &-unchecked {
-      width: 100%;
-    }
-  }
   &__content {
-    margin-left: 5px;
+    margin-left: 2px;
+    margin-top: -1px;
+  }
+}
+.xun-checkbox-group {
+  .xun-checkbox {
+    margin-right: 15px;
   }
 }

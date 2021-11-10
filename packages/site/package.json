@@ -27,7 +27,7 @@
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.3.0",
     "rimraf": "^3.0.2",
-    "xun-components": "^1.0.6"
+    "xun-components": "^1.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

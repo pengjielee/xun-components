@@ -10,14 +10,16 @@ const Demo = () => (
       <h3 className="demo-page-title">列表项</h3>
     </header>
     <main>
-      <Cell title="标题文字" description="描述文字" hasArrow={true}></Cell>
-      <Cell title="标题文字" description="描述文字" hasArrow={true}></Cell>
-      <Cell
-        title="标题文字"
-        description="描述文字"
-        icon={<img alt="" src={img} style={{ width: 24, height: 24 }} />}
-        hasArrow={true}
-      ></Cell>
+      <div className="demo-block white">
+        <Cell title="标题文字" description="描述文字" hasArrow={true}></Cell>
+        <Cell title="标题文字" description="描述文字" hasArrow={true}></Cell>
+        <Cell
+          title="标题文字"
+          description="描述文字"
+          icon={<img alt="" src={img} style={{ width: 24, height: 24 }} />}
+          hasArrow={true}
+        ></Cell>
+      </div>
     </main>
   </div>
 );

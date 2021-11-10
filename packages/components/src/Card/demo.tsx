@@ -9,9 +9,11 @@ const Demo = () => {
         <h3 className="demo-page-title">卡片</h3>
       </header>
       <main>
-        <Card title="标题" more={<a>更多</a>}>
-          内容
-        </Card>
+        <div className="demo-block white">
+          <Card title="标题" more={<a>更多</a>}>
+            内容
+          </Card>
+        </div>
       </main>
     </div>
   );

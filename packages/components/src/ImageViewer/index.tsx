@@ -3,31 +3,11 @@ import React, { FC, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { useSprings, animated } from '@react-spring/web';
 import { useDrag } from '@use-gesture/react';
+import { clamp } from '../assets/utils';
 import Mask from '../Mask';
 import './style.scss';
 
 const classPrefix = 'xun-image-viewer';
-
-/**
- * 返回限制在 lower 和 upper 之间的值。
- *
- * param1. number (number): 被限制的值。
- * param2. [lower] (number): 下限。
- * param3. upper (number): 上限。
- */
-
-const clamp = (number, lower, upper) => {
-  number = +number;
-  lower = +lower;
-  upper = +upper;
-  lower = lower === lower ? lower : 0;
-  upper = upper === upper ? upper : 0;
-  if (number === number) {
-    number = number <= upper ? number : upper;
-    number = number >= lower ? number : lower;
-  }
-  return number;
-};
 
 interface IProps {
   visible?: boolean;

@@ -12,7 +12,7 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">基本用法</div>
-          <div className="demo-body">
+          <div className="demo-body white">
             <TabBar activeKey={activeKey} onChange={(key) => setActiveKey(key)}>
               <TabBar.Item title="首页" key="1" icon={<Home />}></TabBar.Item>
               <TabBar.Item

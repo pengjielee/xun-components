@@ -16,16 +16,20 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">默认</div>
-          <Checkbox>Checkbox</Checkbox>
+          <div className="demo-body white">
+            <Checkbox>Checkbox</Checkbox>
+          </div>
         </div>
 
         <div className="demo-block">
           <div className="demo-title">选项组</div>
-          <Checkbox.Group value={value} onChange={handleChange}>
-            <Checkbox value="red">red</Checkbox>
-            <Checkbox value="green">green</Checkbox>
-            <Checkbox value="blue">blue</Checkbox>
-          </Checkbox.Group>
+          <div className="demo-body white">
+            <Checkbox.Group value={value} onChange={handleChange}>
+              <Checkbox value="red">red</Checkbox>
+              <Checkbox value="green">green</Checkbox>
+              <Checkbox value="blue">blue</Checkbox>
+            </Checkbox.Group>
+          </div>
         </div>
       </main>
     </div>

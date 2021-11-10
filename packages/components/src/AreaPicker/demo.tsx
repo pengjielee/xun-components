@@ -26,27 +26,29 @@ const Demo = () => {
         <h3 className="demo-page-title">省市区选择</h3>
       </header>
       <main>
-        <Cell
-          title="选择省市区"
-          description={
-            <Button size="small" onClick={() => setVisible(true)}>
-              选择
-            </Button>
-          }
-        />
+        <div className="demo-block white">
+          <Cell
+            title="选择省市区"
+            description={
+              <Button size="small" onClick={() => setVisible(true)}>
+                选择
+              </Button>
+            }
+          />
 
-        <div className="demo-result">{resultNames}</div>
+          <div className="demo-result">{resultNames}</div>
 
-        <Cell
-          title="只选择省"
-          description={
-            <Button size="small" onClick={() => setVisible2(true)}>
-              选择
-            </Button>
-          }
-        />
+          <Cell
+            title="只选择省"
+            description={
+              <Button size="small" onClick={() => setVisible2(true)}>
+                选择
+              </Button>
+            }
+          />
 
-        <div className="demo-result">{resultNames2}</div>
+          <div className="demo-result">{resultNames2}</div>
+        </div>
 
         <AreaPicker
           visible={visible}

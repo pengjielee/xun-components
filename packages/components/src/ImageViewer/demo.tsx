@@ -16,14 +16,16 @@ const Demo = () => {
         <h3 className="demo-page-title">图片查看器</h3>
       </header>
       <main>
-        <Cell
-          title="默认"
-          description={
-            <Button size="small" onClick={() => setVisible(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
+        <div className="demo-block white">
+          <Cell
+            title="默认"
+            description={
+              <Button size="small" onClick={() => setVisible(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+        </div>
 
         <ImageViewer visible={visible} images={images}></ImageViewer>
       </main>

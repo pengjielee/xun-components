@@ -16,14 +16,18 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">默认</div>
-          <Radio>Radio</Radio>
+          <div className="demo-body white">
+            <Radio>Radio</Radio>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">选项组</div>
-          <Radio.Group value={value} onChange={handleChange}>
-            <Radio value="1">Radio1</Radio>
-            <Radio value="2">Radio2</Radio>
-          </Radio.Group>
+          <div className="demo-body white">
+            <Radio.Group value={value} onChange={handleChange}>
+              <Radio value="1">Radio1</Radio>
+              <Radio value="2">Radio2</Radio>
+            </Radio.Group>
+          </div>
         </div>
       </main>
     </div>

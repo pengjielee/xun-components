@@ -9,56 +9,58 @@ const Demo = () => {
         <h3 className="demo-page-title">弹窗</h3>
       </header>
       <main>
-        <Cell
-          title="组件调用"
-          description={
-            <Button size="small" onClick={() => setVisible(true)}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="方法调用alert"
-          description={
-            <Button size="small" onClick={() => Dialog.alert('标题')}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="方法调用alert"
-          description={
-            <Button size="small" onClick={() => Dialog.alert('标题', '内容')}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="方法调用confirm"
-          description={
-            <Button size="small" onClick={() => Dialog.confirm('标题')}>
-              开启
-            </Button>
-          }
-        ></Cell>
-        <Cell
-          title="方法调用confirm"
-          description={
-            <Button
-              size="small"
-              onClick={() =>
-                Dialog.confirm(
-                  '标题',
-                  '内容',
-                  () => alert('confirm'),
-                  () => alert('cancel'),
-                )
-              }
-            >
-              开启
-            </Button>
-          }
-        ></Cell>
+        <div className="demo-block white">
+          <Cell
+            title="组件调用"
+            description={
+              <Button size="small" onClick={() => setVisible(true)}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="方法调用alert"
+            description={
+              <Button size="small" onClick={() => Dialog.alert('标题')}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="方法调用alert"
+            description={
+              <Button size="small" onClick={() => Dialog.alert('标题', '内容')}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="方法调用confirm"
+            description={
+              <Button size="small" onClick={() => Dialog.confirm('标题')}>
+                开启
+              </Button>
+            }
+          ></Cell>
+          <Cell
+            title="方法调用confirm"
+            description={
+              <Button
+                size="small"
+                onClick={() =>
+                  Dialog.confirm(
+                    '标题',
+                    '内容',
+                    () => alert('confirm'),
+                    () => alert('cancel'),
+                  )
+                }
+              >
+                开启
+              </Button>
+            }
+          ></Cell>
+        </div>
         <Dialog
           visible={visible}
           showClose={true}

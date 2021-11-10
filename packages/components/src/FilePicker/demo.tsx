@@ -13,25 +13,35 @@ const Demo = () => {
       <main>
         <div className="demo-block">
           <div className="demo-title">默认</div>
-          <FilePicker onChange={handleChange}></FilePicker>
+          <div className="demo-body white">
+            <FilePicker onChange={handleChange}></FilePicker>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">禁用状态</div>
-          <FilePicker disabled={true} onChange={handleChange}></FilePicker>
+          <div className="demo-body white">
+            <FilePicker disabled={true} onChange={handleChange}></FilePicker>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">只能选择图片</div>
-          <FilePicker accept="image/*" onChange={handleChange}></FilePicker>
+          <div className="demo-body white">
+            <FilePicker accept="image/*" onChange={handleChange}></FilePicker>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">支持选取多个文件 </div>
-          <FilePicker multiple onChange={handleChange}></FilePicker>
+          <div className="demo-body white">
+            <FilePicker multiple onChange={handleChange}></FilePicker>
+          </div>
         </div>
         <div className="demo-block">
           <div className="demo-title">定制中间内容</div>
-          <FilePicker multiple onChange={handleChange}>
-            选择图片
-          </FilePicker>
+          <div className="demo-body white">
+            <FilePicker multiple onChange={handleChange}>
+              选择图片
+            </FilePicker>
+          </div>
         </div>
       </main>
     </div>
