@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[7007],{7007:(e,s,c)=>{c.r(s),c.d(s,{default:()=>n});const n='## NoticeBar\n\n使用:\n\n<code src="./demo.tsx"></code>\n'}}]);
