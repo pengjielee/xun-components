@@ -9,6 +9,10 @@
     "clean": "lerna clean",
     "init": "lerna bootstrap"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/pengjielee/xun-components.git"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }

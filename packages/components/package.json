@@ -1,6 +1,6 @@
 {
   "name": "xun-components",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "pengjielee",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -76,5 +76,10 @@
     "dist",
     "es",
     "umd"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pengjielee/xun-components"
+  },
+  "homepage": "https://ui.pengjielee.cn/#/"
 }
