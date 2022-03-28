@@ -20,6 +20,7 @@ interface IProps {
 }
 
 const PullUpStatus = {
+  idle: 'idle',
   pulling: 'pulling', // 下拉可以刷新
   refreshing: 'refreshing', // 刷新中
   complete: 'complete', // 刷新完成
@@ -27,7 +28,7 @@ const PullUpStatus = {
 
 const PullToRefresh: FC<IProps> = (props) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState(PullUpStatus.pulling);
+  const [status, setStatus] = useState(PullUpStatus.idle);
   const [headerStyles, api] = useSpring(() => ({
     from: { height: 0 },
     config: {
@@ -48,13 +49,15 @@ const PullToRefresh: FC<IProps> = (props) => {
   } = props;
 
   const doRefresh = async () => {
+    console.log('reload');
     api.start({ height: headerHeight });
+    // setStatus(PullUpStatus.refreshing);
     setStatus(PullUpStatus.refreshing);
     try {
       await props.onRefresh();
       setStatus(PullUpStatus.complete);
     } catch (e) {
-      setStatus(PullUpStatus.pulling);
+      setStatus(PullUpStatus.idle);
       throw e;
     }
     if (completeDelay > 0) {
@@ -62,14 +65,17 @@ const PullToRefresh: FC<IProps> = (props) => {
     }
     api.start({
       to: async (next) => {
-        await next({ height: 0 });
-        setStatus(PullUpStatus.pulling);
+        // await next({ height: 0 });
+        await next({ height: 0 })
+        setStatus(PullUpStatus.idle);
       },
     });
   };
 
   useDrag(
     (state) => {
+      console.log(state);
+      console.log(status);
       if (
         status === PullUpStatus.refreshing ||
         status === PullUpStatus.complete
@@ -80,11 +86,12 @@ const PullToRefresh: FC<IProps> = (props) => {
       // true when it's the last event
       if (state.last) {
         const [, dy] = state.movement;
-        if (status === PullUpStatus.pulling && dy > 0) {
+        if (status === PullUpStatus.idle && dy > 0) {
           doRefresh();
         } else {
           api.start({ height: 0 });
         }
+        return
       }
       // true when it's the first event
       if (state.first) {
@@ -116,7 +123,7 @@ const PullToRefresh: FC<IProps> = (props) => {
           className={`${classPrefix}__header-content`}
           style={{ height: headerHeight }}
         >
-          {status === PullUpStatus.pulling && pullingText}
+          {status === PullUpStatus.idle && pullingText}
           {status === PullUpStatus.refreshing && refreshingText}
           {status === PullUpStatus.complete && completeText}
         </div>

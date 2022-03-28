@@ -17,7 +17,7 @@ const Demo = () => {
     <div className="demo-page-pull">
       <PullToRefresh
         onRefresh={async () => {
-          await sleep(3000);
+          await sleep(1000);
           setList(createList());
         }}
         completeDelay={100}
