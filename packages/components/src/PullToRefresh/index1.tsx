@@ -66,7 +66,7 @@ const PullToRefresh: FC<IProps> = (props) => {
     api.start({
       to: async (next) => {
         // await next({ height: 0 });
-        await next({ height: 0 })
+        await next({ height: 0 });
         setStatus(PullUpStatus.idle);
       },
     });
@@ -91,7 +91,7 @@ const PullToRefresh: FC<IProps> = (props) => {
         } else {
           api.start({ height: 0 });
         }
-        return
+        return;
       }
       // true when it's the first event
       if (state.first) {
